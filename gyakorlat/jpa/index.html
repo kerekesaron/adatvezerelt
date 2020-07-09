@@ -152,14 +152,16 @@
         
           
 
-<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  
+
+<nav class="md-tabs md-tabs--active" aria-label="Tabs" data-md-component="tabs">
   <div class="md-tabs__inner md-grid">
     <ul class="md-tabs__list">
       
         
   <li class="md-tabs__item">
     
-      <a href="../.." class="md-tabs__link md-tabs__link--active">
+      <a href="../.." class="md-tabs__link">
         Adatvezérelt rendszerek
       </a>
     
@@ -186,6 +188,19 @@
       
         <a href="../../jegyzet/architektura/" class="md-tabs__link">
           Jegyzetek
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../transactions/" class="md-tabs__link md-tabs__link--active">
+          Gyakorlatok
         </a>
       
     </li>
@@ -482,6 +497,235 @@
   </li>
 
     
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+    
+    <label class="md-nav__link" for="nav-4">
+      Gyakorlatok
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Gyakorlatok" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Gyakorlatok
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../transactions/" title="Tranzakciókezelés" class="md-nav__link">
+      Tranzakciókezelés
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../mssql/" title="Microsoft SQL Server programozása" class="md-nav__link">
+      Microsoft SQL Server programozása
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ef/" title="Entity Framework" class="md-nav__link">
+      Entity Framework
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../mongodb/" title="MongoDB" class="md-nav__link">
+      MongoDB
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        JPA & Spring Data
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="JPA & Spring Data" class="md-nav__link md-nav__link--active">
+      JPA & Spring Data
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Tartalomjegyzék">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Tartalomjegyzék
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#elofeltetelek" class="md-nav__link">
+    Előfeltételek
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#amit-erdemes-atnezned" class="md-nav__link">
+    Amit érdemes átnézned
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gyakorlat-menete" class="md-nav__link">
+    Gyakorlat menete
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tippek-az-eclipse-hasznalatahoz" class="md-nav__link">
+    Tippek az Eclipse használatához
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#feladat-0-adatbazis-letrehozasa" class="md-nav__link">
+    Feladat 0: Adatbázis létrehozása
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#feladat-1-eclipse-inditasa" class="md-nav__link">
+    Feladat 1: Eclipse indítása
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#feladat-2-projekt-importalasa" class="md-nav__link">
+    Feladat 2: Projekt importálása
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#feladat-3-entitasok-attekintese" class="md-nav__link">
+    Feladat 3: Entitások áttekintése
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#feladat-4-lekerdezesek" class="md-nav__link">
+    Feladat 4: Lekérdezések
+  </a>
+  
+    <nav class="md-nav" aria-label="Feladat 4: Lekérdezések">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#futtatas" class="md-nav__link">
+    Futtatás
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#feladat-5-adatmodositas" class="md-nav__link">
+    Feladat 5: Adatmódosítás
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#feladat-6-tarolt-eljarasok-hasznalata" class="md-nav__link">
+    Feladat 6: Tárolt eljárások használata
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../rest/" title="REST API & ASP.NET Web API" class="md-nav__link">
+      REST API & ASP.NET Web API
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
   </ul>
 </nav>
                   </div>
@@ -506,13 +750,6 @@
       Tartalomjegyzék
     </label>
     <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#celkituzes" class="md-nav__link">
-    Célkitűzés
-  </a>
-  
-</li>
       
         <li class="md-nav__item">
   <a href="#elofeltetelek" class="md-nav__link">
@@ -616,7 +853,7 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/bmeviauac01/adatvezerelt/edit/master/docs/gyakorlat/Gyak-JPA/README.md" title="Oldal szerkesztése" class="md-content__button md-icon">
+                  <a href="https://github.com/bmeviauac01/adatvezerelt/edit/master/docs/gyakorlat/jpa/index.md" title="Oldal szerkesztése" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
@@ -625,7 +862,6 @@
                 
                 
                 <h1 id="jpa-spring-data">JPA &amp; Spring Data<a class="headerlink" href="#jpa-spring-data" title="Permanent link">&para;</a></h1>
-<h2 id="celkituzes">Célkitűzés<a class="headerlink" href="#celkituzes" title="Permanent link">&para;</a></h2>
 <p>A gyakorlat célja, hogy a hallgatók megismerjék a JPA és a Spring Data használatát. A főbb témák: entitások fejlesztése, lekérdezések megfogalmazása különböző módokon, módosítások végrehajtása. A kódokat egy webalkalmazás projektbe integráljuk, amiben a projekt alapvető konfigurációja és egy teszteléshez használható egyszerű webes felületet már készen áll.</p>
 <h2 id="elofeltetelek">Előfeltételek<a class="headerlink" href="#elofeltetelek" title="Permanent link">&para;</a></h2>
 <p>A labor elvégzéséhez szükséges eszközök:</p>
@@ -633,10 +869,12 @@
 <li>Eclipse for Java EE</li>
 <li>Microsoft SQL Server Express edition (localdb nem alkalmas)</li>
 <li>SQL Server Management Studio</li>
-<li>Adatbázis létrehozó script: <a href="https://raw.githubusercontent.com/bmeviauac01/gyakorlatok/master/mssql.sql">mssql.sql</a></li>
+<li>Adatbázis létrehozó script: <a href="../../db/mssql.sql">mssql.sql</a></li>
 <li>Kiinduló webalkalmazás kódja: <a href="https://github.com/bmeviauac01/gyakorlat-seminar-jpa-starter">https://github.com/bmeviauac01/gyakorlat-seminar-jpa-starter</a></li>
-<li>Az MSSQL JDBC driver letöltése innen: <a href="https://www.aut.bme.hu/Upload/Course/adatvezerelt/gyakorlat_anyagok/mssql-jdbc.zip">https://www.aut.bme.hu/Upload/Course/adatvezerelt/gyakorlat_anyagok/mssql-jdbc.zip</a></li>
+<li>Az MSSQL JDBC driver letöltése innen: <a href="https://www.aut.bme.hu/Upload/Course/adatvezerelt/gyakorlat_anyagok/mssql-jdbc.zip">https://www.aut.bme.hu/Upload/Course/adatvezerelt/gyakorlat_anyagok/mssql-jdbc.zip</a><ul>
 <li>A zipet csomagold ki ide: <code>c:\work\javaee\.m2\repository</code> (a zip egy <em>com</em> nevű könyvtárat tartalmaz, az elvárt végeredmény egy ilyen könyvtárstruktúra: <code>c:\work\javaee\.m2\repository\com\microsoft\...</code>)</li>
+</ul>
+</li>
 </ul>
 <h2 id="amit-erdemes-atnezned">Amit érdemes átnézned<a class="headerlink" href="#amit-erdemes-atnezned" title="Permanent link">&para;</a></h2>
 <ul>
@@ -655,9 +893,11 @@
 <li>Ha a Java Resources alatt egy package-en jobb klikk / New Class/Interfaces, akkor abba a package-be rakja az új elemet by
   default</li>
 <li>Ha a nézeteket becsukjuk/átrendezzük, a default elrendezés visszaállítható: Window / Reset perspective</li>
-<li>Font megnövelése (a tanári gépen hasznos):</li>
+<li>Font megnövelése (a tanári gépen hasznos):<ul>
 <li>Window menü / Preferences, ott elkezdjük gépelni, hogy <em>font</em>, így megtalálja azt a beállítást, hogy Fonts and Colors</li>
 <li>Azt kiválasztva, a Basic kategória alatt kell a Text Fontot kijelölni, és a méretét pl. 18-asra állítani</li>
+</ul>
+</li>
 </ul>
 <h2 id="feladat-0-adatbazis-letrehozasa">Feladat 0: Adatbázis létrehozása<a class="headerlink" href="#feladat-0-adatbazis-letrehozasa" title="Permanent link">&para;</a></h2>
 <ol>
@@ -665,7 +905,7 @@
 <p>Csatlakozzunk <em>Microsoft SQL Server Management Studio</em>-val a a szerverhez. Ezúttal nem <em>localdb</em>-t használunk, a szerver címe: <code>localhost\sqlexpress</code>. A bejelentkezéshez <em>SQL Server Authentication</em> módot válasszuk.</p>
 </li>
 <li>
-<p>Hozzunk létre egy <code>adatvez</code> nevű adatbázist (ügyeljünk a névre, különben a Java projektben módosítanunk kell). Az adatbázis létrehozásának mikéntjét lásd az első gyakorlat anyagában. Ha a gépen már létezik az adatbázis, akkor nem kell újat létrehozni.</p>
+<p>Hozzunk létre egy <code>adatvez</code> nevű adatbázist. <strong>Ügyeljünk a névre, különben a Java projektben módosítanunk kell</strong>. Az adatbázis létrehozásának mikéntjét lásd az <a href="../transactions/">első gyakorlat anyagában</a>. Ha a gépen már létezik az adatbázis, akkor nem kell újat létrehozni.</p>
 </li>
 <li>
 <p>Futtassuk le az adatbázis inicializáló sql szkriptet az adatbázisban. Akkor is futtassuk le a szkriptet, ha már létezne az adatbázis (hogy a kezdeti állapotot visszakapjuk.)</p>
@@ -673,24 +913,28 @@
 </ol>
 <h2 id="feladat-1-eclipse-inditasa">Feladat 1: Eclipse indítása<a class="headerlink" href="#feladat-1-eclipse-inditasa" title="Permanent link">&para;</a></h2>
 <ol>
-<li>Indítsuk el az Eclipse-et innen: <code>C:\Work\javaee\eclipse\eclipse.exe</code>. (Fontos, hogy lehet egy <code>D:\eclipse</code> mappa is, nekünk <em>nem</em> az kell.)</li>
-<li>Indításkor megkérdezi, hova akarunk dolgozni (workspace), itt válasszuk ezt: <code>C:\Work\javaee\workspaces\adatvez</code></li>
+<li>Indítsuk el az Eclipse-et innen: <code>C:\work\javaee\eclipse\eclipse.exe</code>. (Fontos, hogy lehet egy <code>D:\eclipse</code> mappa is, nekünk <em>nem</em> az kell.)</li>
+<li>Indításkor megkérdezi, hova akarunk dolgozni (workspace), itt válasszuk ezt: <code>C:\work\javaee\workspaces\adatvez</code></li>
 <li>Ha az indulás után a Project Explorer-ben ott van egy korábbi gyakorlatról a <strong>webshop</strong> nevű projekt, azt töröljük ki: a projekten jobb klikk / <em>Delete</em>, amikor rákérdez, pipáljuk be, hogy a fájlrendszerről is törlődjön.</li>
 </ol>
 <h2 id="feladat-2-projekt-importalasa">Feladat 2: Projekt importálása<a class="headerlink" href="#feladat-2-projekt-importalasa" title="Permanent link">&para;</a></h2>
 <ol>
-<li>Töltsük le a méréshez tartozó projekt vázat!</li>
+<li>Töltsük le a méréshez tartozó projekt vázat!<ul>
 <li>Nyissunk egy <em>command prompt</em>-ot</li>
 <li>Navigáljunk el egy tetszőleges mappába, például <code>c/d:\work\NEPTUN</code></li>
 <li>Adjuk ki a következő parancsot: <code>git clone --depth 1 https://github.com/bmeviauac01/gyakorlat-seminar-jpa-starter.git</code></li>
-<li>Importáljuk a letöltött forráskódot a workspace-be:</li>
+</ul>
+</li>
+<li>Importáljuk a letöltött forráskódot a workspace-be:<ul>
 <li>Nyissuk meg a <em>File / Import...</em>-ot</li>
 <li>Kezdjük el gépelni a textboxba, hogy <em>Existing projects into workspace</em>, így rá fog szűrni és válasszuk ki ezt</li>
 <li>Keressük meg a kicsomagolt webshop projektet (a <code>webshop</code> mappát a saját könyvtárunk alatt), OK, utána a dialogban pipáljuk be a webshop-ot (lehet, hogy by default be lesz pipálva)</li>
 <li>Finish</li>
+</ul>
+</li>
 <li>
 <p>Tekintsük át röviden a projektet:</p>
-</li>
+<ul>
 <li>
 <p>Ez egy <em>maven</em> alapú projekt. A maven parancssori build eszköz, ami IDE-khez is illeszthető. Fontos tulajdonsága, hogy képes a szükséges library függőségeket online repository-kból letölteni. Ha megnyitjuk a projekt gyökerében <code>pom.xml</code>-t, a maven konfig fájlját, dependency tagekben függőségeket látunk, amik (tranzitív módon) behúzzák a <em>Hibernate</em>-et mint JPA implementációt, a <em>Spring Boot</em>-ot, a <em>Spring Data</em>-t és a webréteghez szükséges <em>Spring MVC</em>-t és <em>Thymeleaf</em>-et. A laborban a maven offline működésre van konfigurálva, és előre le van töltve az összes függőség, így megelőzzük az esetleges hálózati problémákat.</p>
 </li>
@@ -701,13 +945,18 @@
 <p>A <code>ConnectionProperties</code> az előző konfig fájl egy részének Java-beli reprezentációja</p>
 </li>
 <li>
-<p>A <code>WebshopApplication</code> a Spring Boot alkalmazás belépési pontja és konfigja is. Egy hagyományos webalkalmazást egy külön processzben futó webkonténerre (pl. Tomcat, Jetty) kellene telepíteni. Spring Boot-os fejlesztés esetében viszont maga a Spring Boot fog elindítani egy beágyazott webkonténert (alapértelmezésben Tomcat-et). A <code>tomcatFactory</code> metódusban regisztráljuk be az SQL Server JDBC driverét jdbc/termekDB JNDI néven, hogy a JPA majd megtalálja. Ha nem adatvez az adatbázisunk neve, akkor a JDBC URL-t módosítani kell a megfelelő sornál: resource.setProperty("url", "jdbc:sqlserver://localhost;database=<strong>adatvez</strong>");</p>
+<p>A <code>WebshopApplication</code> a Spring Boot alkalmazás belépési pontja és konfigja is. Egy hagyományos webalkalmazást egy külön processzben futó webkonténerre (pl. Tomcat, Jetty) kellene telepíteni. Spring Boot-os fejlesztés esetében viszont maga a Spring Boot fog elindítani egy beágyazott webkonténert (alapértelmezésben Tomcat-et). A <code>tomcatFactory</code> metódusban regisztráljuk be az SQL Server JDBC driverét jdbc/termekDB JNDI néven, hogy a JPA majd megtalálja.</p>
+<div class="admonition note">
+<p>Ha nem adatvez az adatbázisunk neve, akkor a JDBC URL-t módosítani kell a megfelelő sornál: resource.setProperty("url", "jdbc:sqlserver://localhost;database=<strong>adatvez</strong>");</p>
+</div>
 </li>
 <li>
 <p>A webes felület egyetlen oldal, az <code>src\main\resources\templates\testPage.html</code>. Ebbe nem fogunk majd belenyúlni. Standard html + Thymeleaf-es attribútumok látahtóak benne.</p>
 </li>
 <li>
-<p>WebshopController: a webréteget megvalósító controller osztály, ennek metódusai kezelik az alkalmazáshoz érkező HTTP kéréseket. Jellemzően lekérdezések eredményét akarjuk megjeleníteni az oldalon, ezért a lekérdezés eredményét a modellbe tesszük valamilyen néven, amire hivatkozni tudunk a Thymeleaf segítségével. A <code>//TODO</code> részekre kell majd bekötni az egyes feladatokat megvalósító metódusok meghívását.</p>
+<p><code>WebshopController</code>: a webréteget megvalósító controller osztály, ennek metódusai kezelik az alkalmazáshoz érkező HTTP kéréseket. Jellemzően lekérdezések eredményét akarjuk megjeleníteni az oldalon, ezért a lekérdezés eredményét a modellbe tesszük valamilyen néven, amire hivatkozni tudunk a Thymeleaf segítségével. A <code>//TODO</code> részekre kell majd bekötni az egyes feladatokat megvalósító metódusok meghívását.</p>
+</li>
+</ul>
 </li>
 </ol>
 <h2 id="feladat-3-entitasok-attekintese">Feladat 3: Entitások áttekintése<a class="headerlink" href="#feladat-3-entitasok-attekintese" title="Permanent link">&para;</a></h2>
@@ -723,7 +972,10 @@
 </li>
 </ul>
 <h2 id="feladat-4-lekerdezesek">Feladat 4: Lekérdezések<a class="headerlink" href="#feladat-4-lekerdezesek" title="Permanent link">&para;</a></h2>
-<p>A leképzett adatmodellen fogalmazd meg az alábbi lekérdezéseket! A lekérdezéseket JPA és Spring Data használata esetén több módon is megvalósíthatjuk. Az alábbi feladatokban azt is megadjuk, milyen módon kell elkészíteni a lekérdezést, hogy mindegyikre lássunk példát. Fontos megjegyezni, hogy ezek a módszerre vonatkozó megkötések csak oktatási szempontok miatt szerepelnek, valójában bármelyik módszerrel bármelyik lekérdezés megvalósítható lenne.</p>
+<p>A leképzett adatmodellen fogalmazd meg az alábbi lekérdezéseket! A lekérdezéseket JPA és Spring Data használata esetén több módon is megvalósíthatjuk. Az alábbi feladatokban azt is megadjuk, milyen módon kell elkészíteni a lekérdezést, hogy mindegyikre lássunk példát.</p>
+<div class="admonition important">
+<p>Fontos megjegyezni, hogy ezek a módszerre vonatkozó megkötések csak oktatási szempontok miatt szerepelnek, valójában bármelyik módszerrel bármelyik lekérdezés megvalósítható lenne.</p>
+</div>
 <p>Az egyes feladatokat megvalósító metódusokat mindig a <code>WebshopController</code> osztály megfelelő <code>//TODO</code> kommentjeinél kell meghívni, majd a webalkalmazást futtatni és böngészőből tesztelni a
 <a href="http://localhost:9080">http://localhost:9080</a> URL-en.</p>
 <p><strong>a)</strong> Listázd azon termékek nevét és raktárkészletét, melyből több mint 30 darab van raktáron! Módszer: Spring Data repository interfész, metódusnévből származtatott lekérdezés.</p>
@@ -745,12 +997,8 @@
 <li>metódus szignatúrát módosítottunk</li>
 </ul>
 <p>Röviden: a metódus törzsön belüli változásokon kívül mindig újraindítás lesz szükséges.</p>
-<details><summary markdown="span">Megoldás</summary>
-
-### 4.a feladat
-
-Nyissuk meg a `dao` package-ben lévő `ProductRepository` interfészt, amely a Spring Data-s `JpaRepository`-ból származik (és az egyelőre üres `ProductRepositoryCustom`-ból). Találunk benne későbbi feladathoz kapcsolódó metódusokat, azokat csak figyeljük meg. Valamelyik `@Query` annotációval definiálja a futtatandó lekérdezést, valamelyiknél az is hiányzik. Nekünk sem lesz szükség `@Query` annotációra, mert a metódus neve alapján a Spring Data képes kitalálni a query-t. Tegyük tehát bele ezt az új metódust:
-
+<details class="example"><summary>Megoldás</summary><p><strong>4.a feladat</strong></p>
+<p>Nyissuk meg a <code>dao</code> package-ben lévő <code>ProductRepository</code> interfészt, amely a Spring Data-s <code>JpaRepository</code>-ból származik (és az egyelőre üres <code>ProductRepositoryCustom</code>-ból). Találunk benne későbbi feladathoz kapcsolódó metódusokat, azokat csak figyeljük meg. Valamelyik <code>@Query</code> annotációval definiálja a futtatandó lekérdezést, valamelyiknél az is hiányzik. Nekünk sem lesz szükség <code>@Query</code> annotációra, mert a metódus neve alapján a Spring Data képes kitalálni a query-t. Tegyük tehát bele ezt az új metódust:</p>
 <div class="highlight"><pre><span></span><code><span class="kn">package</span> <span class="nn">hu.bme.aut.adatvez.webshop.dao</span><span class="p">;</span>
 
 <span class="kn">import</span> <span class="nn">java.math.BigDecimal</span><span class="p">;</span>
@@ -764,8 +1012,7 @@ Nyissuk meg a `dao` package-ben lévő `ProductRepository` interfészt, amely a 
 <span class="p">}</span>
 </code></pre></div>
 
-A `WebshopController`-ben már be van injektálva egy `ProductRepository` típusú tagváltozó, hívjuk meg rajta a metódust az 4.a TODO-nál:
-
+<p>A <code>WebshopController</code>-ben már be van injektálva egy <code>ProductRepository</code> típusú tagváltozó, hívjuk meg rajta a metódust az 4.a TODO-nál:</p>
 <div class="highlight"><pre><span></span><code><span class="nd">@Controller</span>
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">WebshopController</span> <span class="p">{</span>
 
@@ -780,10 +1027,8 @@ A `WebshopController`-ben már be van injektálva egy `ProductRepository` típus
 <span class="p">}</span>
 </code></pre></div>
 
-### 4.b feladat
-
-A `dao` package-ben lévő `ProductRepositoryCustom` interfészbe vegyük fel egy `findProductsOrderedAtLeastTwice` nevű metódust:
-
+<p><strong>4.b feladat</strong></p>
+<p>A <code>dao</code> package-ben lévő <code>ProductRepositoryCustom</code> interfészbe vegyük fel egy <code>findProductsOrderedAtLeastTwice</code> nevű metódust:</p>
 <div class="highlight"><pre><span></span><code><span class="kn">package</span> <span class="nn">hu.bme.aut.adatvez.webshop.dao</span><span class="p">;</span>
 
 <span class="kn">import</span> <span class="nn">hu.bme.aut.adatvez.webshop.model.Product</span><span class="p">;</span>
@@ -794,12 +1039,9 @@ A `dao` package-ben lévő `ProductRepositoryCustom` interfészbe vegyük fel eg
 <span class="p">}</span>
 </code></pre></div>
 
-A dao package-ben lévő `ProductRepositoryImpl` osztály hibás lesz emiatt, mert nem implementálja a `ProductRepositoryCustom`-ot. Nyissuk meg az osztályt, és az osztály elején, a sor elején megjelenő kis villanykörtére kattintva belegeneráltathatjuk a nem implementált metódus vázát:
-
-![Eclise interfész implementálása](images/eclipse-implement-methods.png)
-
-Utána a törzsbe írhatjuk az implementációt, melynek lényege: injektált EntityManager-rel hozzuk létre és futtatjuk le a query-t. (Most látszik igazán, hogy az előző, Spring Data-s megoldás mennyi boilerplate kódot spórolt meg nekünk.)
-
+<p>A dao package-ben lévő <code>ProductRepositoryImpl</code> osztály hibás lesz emiatt, mert nem implementálja a <code>ProductRepositoryCustom</code>-ot. Nyissuk meg az osztályt, és az osztály elején, a sor elején megjelenő kis villanykörtére kattintva belegeneráltathatjuk a nem implementált metódus vázát:</p>
+<p><img alt="Eclise interfész implementálása" src="images/eclipse-implement-methods.png" /></p>
+<p>Utána a törzsbe írhatjuk az implementációt, melynek lényege: injektált EntityManager-rel hozzuk létre és futtatjuk le a query-t. (Most látszik igazán, hogy az előző, Spring Data-s megoldás mennyi boilerplate kódot spórolt meg nekünk.)</p>
 <div class="highlight"><pre><span></span><code><span class="kn">package</span> <span class="nn">hu.bme.aut.adatvez.webshop.dao</span><span class="p">;</span>
 
 <span class="kn">import</span> <span class="nn">hu.bme.aut.adatvez.webshop.model.Product</span><span class="p">;</span>
@@ -817,23 +1059,22 @@ Utána a törzsbe írhatjuk az implementációt, melynek lényege: injektált En
   <span class="nd">@Override</span>
   <span class="kd">public</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">Product</span><span class="o">&gt;</span> <span class="nf">findProductsOrderedAtLeastTwice</span><span class="p">(){</span>
     <span class="k">return</span> <span class="n">em</span><span class="p">.</span><span class="na">createQuery</span><span class="p">(</span><span class="s">&quot;SELECT DISTINCT p FROM Product p</span>
-<span class="s">                           LEFT JOIN FETCH p.orderitems</span>
-<span class="s">                           WHERE size(p.orderitems) &gt;= :itemsMin&quot;</span><span class="p">,</span> <span class="n">Termek</span><span class="p">.</span><span class="na">class</span><span class="p">)</span>
+<span class="s">                          LEFT JOIN FETCH p.orderitems</span>
+<span class="s">                          WHERE size(p.orderitems) &gt;= :itemsMin&quot;</span><span class="p">,</span> <span class="n">Termek</span><span class="p">.</span><span class="na">class</span><span class="p">)</span>
           <span class="p">.</span><span class="na">setParameter</span><span class="p">(</span><span class="s">&quot;itemsMin&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
           <span class="p">.</span><span class="na">getResultList</span><span class="p">();</span>
   <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
 
-Megjegyzés a megoldáshoz: az első ötletünk ez lehetne: `SELECT p FROM Product p WHERE size(p.orderitems) /= :itemsMin`. Írjuk be és próbáljuk ki előbb ezt, ilyenkor viszont `org.hibernate.LazyInitializationException` dobódik teszteléskor, mert lecsatolt állapotban akarunk kapcsolódó entitást elérni (amikor a táblázatot generálja a webréteg, és a orderitems listára hivatkozunk). Lehetséges megoldások:
-
-- Az _application.properties_-ben `spring.jpa.open-in-view=true` (ez lenne amúgy a default Spring Boot esetében, de a példa projektben direkt false-ra van állítva): Ilyenkor az EntityManager már a webes kérés legelején létrejön, és csak a view renderelése után záródik be, vagyis a Spring bean-beli metódusok visszatérése után is menedzselt állapotban lenne a Product entitás, és el lehetne kérni a kapcsolódó orderitems listát.
-- vagy `@OneToMany(fetch=EAGER)` a orderitems változóra
-- vagy _EntityGraph_ definiálása és annak alkalmazása a query létrehozásakor
-- vagy `LEFT JOIN FETCH`, mi ezt választottuk a fenti megoldásban. E mellé a `DISTINCT` is kell, különben minden kapcsolódó Orderitem példányra külön Product sor is lesz.
-
-A meghívás a `WebshopController`-ben triviális:
-
+<p>Megjegyzés a megoldáshoz: az első ötletünk ez lehetne: <code>SELECT p FROM Product p WHERE size(p.orderitems) /= :itemsMin</code>. Írjuk be és próbáljuk ki előbb ezt, ilyenkor viszont <code>org.hibernate.LazyInitializationException</code> dobódik teszteléskor, mert lecsatolt állapotban akarunk kapcsolódó entitást elérni (amikor a táblázatot generálja a webréteg, és a orderitems listára hivatkozunk). Lehetséges megoldások:</p>
+<ul>
+<li>Az <em>application.properties</em>-ben <code>spring.jpa.open-in-view=true</code> (ez lenne amúgy a default Spring Boot esetében, de a példa projektben direkt false-ra van állítva): Ilyenkor az EntityManager már a webes kérés legelején létrejön, és csak a view renderelése után záródik be, vagyis a Spring bean-beli metódusok visszatérése után is menedzselt állapotban lenne a Product entitás, és el lehetne kérni a kapcsolódó orderitems listát.</li>
+<li>vagy <code>@OneToMany(fetch=EAGER)</code> a orderitems változóra</li>
+<li>vagy <em>EntityGraph</em> definiálása és annak alkalmazása a query létrehozásakor</li>
+<li>vagy <code>LEFT JOIN FETCH</code>, mi ezt választottuk a fenti megoldásban. E mellé a <code>DISTINCT</code> is kell, különben minden kapcsolódó Orderitem példányra külön Product sor is lesz.</li>
+</ul>
+<p>A meghívás a <code>WebshopController</code>-ben triviális:</p>
 <div class="highlight"><pre><span></span><code><span class="c1">// 4.b feladat</span>
 <span class="kd">private</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">Product</span><span class="o">&gt;</span> <span class="nf">findProductsOrderedAtLeastTwice</span><span class="p">()</span> <span class="p">{</span>
   <span class="c1">// TODO</span>
@@ -841,33 +1082,27 @@ A meghívás a `WebshopController`-ben triviális:
 <span class="p">}</span>
 </code></pre></div>
 
-### 4.c feladat
-
-A `Product` osztályt nyissuk meg, ott a gyorsabb haladás érdekében már fogunk találni kész named query-ket, a másodikat kell használnunk:
-
+<p><strong>4.c feladat</strong></p>
+<p>A <code>Product</code> osztályt nyissuk meg, ott a gyorsabb haladás érdekében már fogunk találni kész named query-ket, a másodikat kell használnunk:</p>
 <div class="highlight"><pre><span></span><code><span class="nd">@NamedQueries</span><span class="p">({</span>
 <span class="nd">@NamedQuery</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">&quot;Product.findAll&quot;</span><span class="p">,</span> <span class="n">query</span><span class="o">=</span><span class="s">&quot;SELECT p FROM Product p&quot;</span><span class="p">),</span>
 <span class="nd">@NamedQuery</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">&quot;Product.findMostExpensive&quot;</span><span class="p">,</span> <span class="n">query</span><span class="o">=</span><span class="s">&quot;SELECT p FROM Product p WHERE p.price IN (SELECT MAX(p2.price) FROM Product p2)&quot;</span><span class="p">)</span>
 <span class="p">})</span>
 </code></pre></div>
 
-A named query-t két módon is meghívhatjuk. Ha lassú a haladás, elég az első módszerrel megcsinálni. Az első módszer, hogy a named query-vel egyező nevű metódust teszünk a `ProductRepository`-ba (leszámítva a _Product._ előtagot.) Vagyis:
-
+<p>A named query-t két módon is meghívhatjuk. Ha lassú a haladás, elég az első módszerrel megcsinálni. Az első módszer, hogy a named query-vel egyező nevű metódust teszünk a <code>ProductRepository</code>-ba (leszámítva a <em>Product.</em> előtagot.) Vagyis:</p>
 <div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">Product</span><span class="o">&gt;</span> <span class="nf">findMostExpensive</span><span class="p">();</span>
 </code></pre></div>
 
-A másik lehetőség, hogy a `ProductRepositoryImpl`-ben, `EntityManager`-en keresztül hívjuk meg a named query-t:
-
+<p>A másik lehetőség, hogy a <code>ProductRepositoryImpl</code>-ben, <code>EntityManager</code>-en keresztül hívjuk meg a named query-t:</p>
 <div class="highlight"><pre><span></span><code><span class="nd">@Override</span>
 <span class="kd">public</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">Product</span><span class="o">&gt;</span> <span class="nf">findMostExpensiveProducts</span><span class="p">(){</span>
   <span class="k">return</span> <span class="n">em</span><span class="p">.</span><span class="na">createNamedQuery</span><span class="p">(</span><span class="s">&quot;Product.findMostExpensive&quot;</span><span class="p">,</span> <span class="n">Product</span><span class="p">.</span><span class="na">class</span><span class="p">).</span><span class="na">getResultList</span><span class="p">();</span>
 <span class="p">}</span>
 </code></pre></div>
 
-Ilyenkor ezt a metódust ki kell még tenni a `ProductRepositoryCustom` interfészbe. Leggyorsabb így: Jobb klikk / _Refactor / Pull up_, és ott a metódus kiválasztható
-
-Végül valamelyik verziót hívjuk meg a `WebshopController` megfelelő pontján:
-
+<p>Ilyenkor ezt a metódust ki kell még tenni a <code>ProductRepositoryCustom</code> interfészbe. Leggyorsabb így: Jobb klikk / <em>Refactor / Pull up</em>, és ott a metódus kiválasztható</p>
+<p>Végül valamelyik verziót hívjuk meg a <code>WebshopController</code> megfelelő pontján:</p>
 <div class="highlight"><pre><span></span><code><span class="c1">// 4.c feladat</span>
 <span class="kd">private</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">Product</span><span class="o">&gt;</span> <span class="nf">findMostExpensiveProducts</span><span class="p">()</span> <span class="p">{</span>
   <span class="c1">// TODO</span>
@@ -877,18 +1112,13 @@ Végül valamelyik verziót hívjuk meg a `WebshopController` megfelelő pontjá
 </code></pre></div>
 
 </details>
-
 <h2 id="feladat-5-adatmodositas">Feladat 5: Adatmódosítás<a class="headerlink" href="#feladat-5-adatmodositas" title="Permanent link">&para;</a></h2>
 <p>A JPA nemcsak lekérdezéshez használható, hanem rajta keresztül módosítások is végrehajthatóak.</p>
 <p><strong>a)</strong> Írj olyan JPQL lekérdezést a <code>ProductRepository</code> interfészbe, mely a "Building items" árát megemeli 10 százalékkal!</p>
 <p><strong>b)</strong> Írj egy olyan metódust, amely létrehoz egy új kategóriát "Expensive toys" névvel, ha még nem létezik ilyen, és sorold át ide az összes olyan terméket, melynek ára, nagyobb, mint 8000 Ft!</p>
 <p><strong>c)</strong> Egyszerű önálló feladat: az 5.b feladat közös megoldásában egy <code>EntityManager</code>-en keresztül lefuttatott lekérdezéssel ellenőrizzük, hogy létezik-e "Expensive toys" nevű kategória. Valósítsd meg ugyanezt a lekérdezést Spring Data repository interfészben, metódus névből származtatott lekérdezéssel, és hívd meg a megfelelő ponton.</p>
-<details><summary markdown="span">Megoldás</summary>
-
-### 5.a feladat
-
-A `ProductRepository` interfészben egy _UPDATE query_-t definiálunk. Azt, hogy ez módosító query, közölni kell a Spring Data-val (`@Modifying`), valamint tranzakcióba is kell tennünk `@Transactional`, az `org.springframework...` package-ből):
-
+<details class="example"><summary>Megoldás</summary><p><strong>5.a feladat</strong></p>
+<p>A <code>ProductRepository</code> interfészben egy <em>UPDATE query</em>-t definiálunk. Azt, hogy ez módosító query, közölni kell a Spring Data-val (<code>@Modifying</code>), valamint tranzakcióba is kell tennünk <code>@Transactional</code>, az <code>org.springframework...</code> package-ből):</p>
 <div class="highlight"><pre><span></span><code><span class="nd">@Modifying</span>
 <span class="nd">@Transactional</span>
 <span class="nd">@Query</span><span class="p">(</span><span class="s">&quot;UPDATE Product p SET p.price=p.price*1.1 WHERE t.id IN</span>
@@ -896,8 +1126,7 @@ A `ProductRepository` interfészben egy _UPDATE query_-t definiálunk. Azt, hogy
 <span class="kt">void</span> <span class="nf">categoryRaisePrice</span><span class="p">(</span><span class="nd">@Param</span><span class="p">(</span><span class="s">&quot;categoryName&quot;</span><span class="p">)</span> <span class="n">String</span> <span class="n">categoryName</span><span class="p">);</span>
 </code></pre></div>
 
-Meghívása a `WebshopController`-ből:
-
+<p>Meghívása a <code>WebshopController</code>-ből:</p>
 <div class="highlight"><pre><span></span><code><span class="c1">// 5.a feladat</span>
 <span class="nd">@RequestMapping</span><span class="p">(</span><span class="n">value</span> <span class="o">=</span> <span class="s">&quot;/raisePriceOfBuildingItems&quot;</span><span class="p">,</span> <span class="n">method</span> <span class="o">=</span> <span class="p">{</span>
         <span class="n">RequestMethod</span><span class="p">.</span><span class="na">POST</span><span class="p">,</span> <span class="n">RequestMethod</span><span class="p">.</span><span class="na">GET</span> <span class="p">})</span>
@@ -908,12 +1137,9 @@ Meghívása a `WebshopController`-ből:
 <span class="p">}</span>
 </code></pre></div>
 
-Böngészőben a gomb megnyomása után a gomb alatti táblázatban látszódik az átárazás hatása.
-
-#### 5.b feladat
-
-A `dao` package-be új osztály, `CategoryService` néven, `@Service` annotációval, szintén `@Transactional` metódussal:
-
+<p>Böngészőben a gomb megnyomása után a gomb alatti táblázatban látszódik az átárazás hatása.</p>
+<p><strong>5.b feladat</strong></p>
+<p>A <code>dao</code> package-be új osztály, <code>CategoryService</code> néven, <code>@Service</code> annotációval, szintén <code>@Transactional</code> metódussal:</p>
 <div class="highlight"><pre><span></span><code><span class="nd">@Service</span>
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">CategoryService</span> <span class="p">{</span>
 
@@ -949,10 +1175,8 @@ A `dao` package-be új osztály, `CategoryService` néven, `@Service` annotáci�
 <span class="p">}</span>
 </code></pre></div>
 
-Figyeljük meg, hogy a menedzselt entitás példányokat (amit tranzakción belül találunk meg query-vel, vagy most persist-áltunk frissen) nem kell explicit módon visszamenteni, tranzakció végén automatikusan DB-be íródnak a memóriabeli változások.
-
-Meghívás a `WebshopController`-ből:
-
+<p>Figyeljük meg, hogy a menedzselt entitás példányokat (amit tranzakción belül találunk meg query-vel, vagy most persist-áltunk frissen) nem kell explicit módon visszamenteni, tranzakció végén automatikusan DB-be íródnak a memóriabeli változások.</p>
+<p>Meghívás a <code>WebshopController</code>-ből:</p>
 <div class="highlight"><pre><span></span><code><span class="nd">@Autowired</span>
 <span class="n">CategoryService</span> <span class="n">categoryService</span><span class="p">;</span>
 <span class="p">...</span>
@@ -967,19 +1191,15 @@ Meghívás a `WebshopController`-ből:
 <span class="p">}</span>
 </code></pre></div>
 
-Böngészőben a gomb megnyomása után látszódik a _Drága játékok_ kategória tartalma
-
-#### 5.c feladat
-
-A `dao` package-be új interfész, `CategoryRepository` néven, a `ProductRepository` mintájára (a Custom-os leszármazás nem kell, mert nem lesznek custom lekérdezéseink) egy metódussal:
-
+<p>Böngészőben a gomb megnyomása után látszódik a <em>Drága játékok</em> kategória tartalma</p>
+<p><strong>5.c feladat</strong></p>
+<p>A <code>dao</code> package-be új interfész, <code>CategoryRepository</code> néven, a <code>ProductRepository</code> mintájára (a Custom-os leszármazás nem kell, mert nem lesznek custom lekérdezéseink) egy metódussal:</p>
 <div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">CategoryRepository</span> <span class="kd">extends</span> <span class="n">JpaRepository</span><span class="o">&lt;</span><span class="n">Category</span><span class="p">,</span> <span class="n">Long</span><span class="o">&gt;</span><span class="p">{</span>
   <span class="n">List</span><span class="o">&lt;</span><span class="n">Category</span><span class="o">&gt;</span> <span class="nf">findByName</span><span class="p">(</span><span class="n">String</span> <span class="n">name</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div>
 
-Ezután a `CategoryService` így egyszerűsödik le:
-
+<p>Ezután a <code>CategoryService</code> így egyszerűsödik le:</p>
 <div class="highlight"><pre><span></span><code><span class="nd">@Service</span>
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">CategoryService</span> <span class="p">{</span>
 <span class="p">...</span>
@@ -997,7 +1217,6 @@ Ezután a `CategoryService` így egyszerűsödik le:
 </code></pre></div>
 
 </details>
-
 <h2 id="feladat-6-tarolt-eljarasok-hasznalata">Feladat 6: Tárolt eljárások használata<a class="headerlink" href="#feladat-6-tarolt-eljarasok-hasznalata" title="Permanent link">&para;</a></h2>
 <p>Hívd meg a JPA-ból a <em>CreateNewPaymentMethod</em> nevű tárolt eljárást, mely új fizetési mód rögzítésére szolgál, és visszaadja az új rekord azonosítóját!</p>
 <ul>
@@ -1006,8 +1225,6 @@ Ezután a `CategoryService` így egyszerűsödik le:
 </li>
 <li>
 <p>Ha nem, akkor az alábbi kódot futtasd le a Management Studioban a tárolt eljárás létrehozásához!</p>
-</li>
-</ul>
 <div class="highlight"><pre><span></span><code><span class="k">CREATE</span> <span class="k">PROCEDURE</span> <span class="n">CreateNewPaymentMethod</span>
 <span class="p">(</span>
 <span class="o">@</span><span class="k">Method</span> <span class="n">nvarchar</span><span class="p">(</span><span class="mi">20</span><span class="p">),</span>
@@ -1019,24 +1236,22 @@ Ezután a `CategoryService` így egyszerűsödik le:
 <span class="k">select</span> <span class="n">scope_identity</span><span class="p">()</span> <span class="k">as</span> <span class="n">NewId</span>
 </code></pre></div>
 
-<details><summary markdown="span">Megoldás</summary>
-
-A `PaymentMethod` entitáson megtaláljuk az alábbi annotációt. Vessük össze a tárolt eljárást definiáló kóddal a változó neveket!
-
+</li>
+</ul>
+<details class="example"><summary>Megoldás</summary><p>A <code>PaymentMethod</code> entitáson megtaláljuk az alábbi annotációt. Vessük össze a tárolt eljárást definiáló kóddal a változó neveket!</p>
 <div class="highlight"><pre><span></span><code><span class="nd">@NamedStoredProcedureQueries</span><span class="p">({</span>
-    <span class="nd">@NamedStoredProcedureQuery</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">&quot;createMethodSP&quot;</span><span class="p">,</span>
-            <span class="n">procedureName</span> <span class="o">=</span> <span class="s">&quot;CreateNewPaymentMethod&quot;</span><span class="p">,</span>
-            <span class="n">parameters</span> <span class="o">=</span> <span class="p">{</span>
-                <span class="nd">@StoredProcedureParameter</span><span class="p">(</span><span class="n">mode</span> <span class="o">=</span> <span class="n">ParameterMode</span><span class="p">.</span><span class="na">IN</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="s">&quot;Method&quot;</span><span class="p">,</span> <span class="n">type</span> <span class="o">=</span> <span class="n">String</span><span class="p">.</span><span class="na">class</span><span class="p">),</span>
-                <span class="nd">@StoredProcedureParameter</span><span class="p">(</span><span class="n">mode</span> <span class="o">=</span> <span class="n">ParameterMode</span><span class="p">.</span><span class="na">IN</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="s">&quot;Deadline&quot;</span><span class="p">,</span> <span class="n">type</span> <span class="o">=</span> <span class="n">BigDecimal</span><span class="p">.</span><span class="na">class</span><span class="p">)</span>
-            <span class="p">})</span>
+  <span class="nd">@NamedStoredProcedureQuery</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">&quot;createMethodSP&quot;</span><span class="p">,</span>
+      <span class="n">procedureName</span> <span class="o">=</span> <span class="s">&quot;CreateNewPaymentMethod&quot;</span><span class="p">,</span>
+      <span class="n">parameters</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="nd">@StoredProcedureParameter</span><span class="p">(</span><span class="n">mode</span> <span class="o">=</span> <span class="n">ParameterMode</span><span class="p">.</span><span class="na">IN</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="s">&quot;Method&quot;</span><span class="p">,</span> <span class="n">type</span> <span class="o">=</span> <span class="n">String</span><span class="p">.</span><span class="na">class</span><span class="p">),</span>
+            <span class="nd">@StoredProcedureParameter</span><span class="p">(</span><span class="n">mode</span> <span class="o">=</span> <span class="n">ParameterMode</span><span class="p">.</span><span class="na">IN</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="s">&quot;Deadline&quot;</span><span class="p">,</span> <span class="n">type</span> <span class="o">=</span> <span class="n">BigDecimal</span><span class="p">.</span><span class="na">class</span><span class="p">)</span>
+          <span class="p">})</span>
 <span class="p">})</span>
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Paymentmethod</span> <span class="kd">implements</span> <span class="n">Serializable</span> <span class="p">{</span>
 <span class="p">...</span>
 </code></pre></div>
 
-A named stored procedure query meghívható Spring Data repositoryból (`dao` package-en _New Interface ... / PaymentmethodRepository_):
-
+<p>A named stored procedure query meghívható Spring Data repositoryból (<code>dao</code> package-en <em>New Interface ... / PaymentmethodRepository</em>):</p>
 <div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">PaymentmethodRepository</span> <span class="kd">extends</span> <span class="n">JpaRepository</span><span class="o">&lt;</span><span class="n">Paymentmethod</span><span class="p">,</span> <span class="n">Long</span><span class="o">&gt;</span> <span class="p">{</span>
 
   <span class="nd">@Procedure</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">&quot;createMethodSP&quot;</span><span class="p">)</span>
@@ -1044,8 +1259,7 @@ A named stored procedure query meghívható Spring Data repositoryból (`dao` pa
 <span class="p">}</span>
 </code></pre></div>
 
-Spring Data nélkül így menne, `EntityManager`-en keresztül, erre valószínűleg már nem lesz idő:
-
+<p>Spring Data nélkül így menne, <code>EntityManager</code>-en keresztül, erre valószínűleg már nem lesz idő:</p>
 <div class="highlight"><pre><span></span><code><span class="nd">@Service</span>
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">PaymentmethodService</span> <span class="p">{</span>
 
@@ -1061,21 +1275,23 @@ Spring Data nélkül így menne, `EntityManager`-en keresztül, erre valószín�
 <span class="p">}</span>
 </code></pre></div>
 
-A webrétegbeli meghívás:
-
-- Injektáljuk a `WebshopController`-be a `PaymentmethodRepository` interfészt:
-
+<p>A webrétegbeli meghívás:</p>
+<ul>
+<li>Injektáljuk a <code>WebshopController</code>-be a <code>PaymentmethodRepository</code> interfészt:</li>
+</ul>
 <div class="highlight"><pre><span></span><code><span class="nd">@Autowired</span>
 <span class="n">PaymentmethodRepository</span> <span class="n">paymentmethodRepository</span><span class="p">;</span>
 </code></pre></div>
 
-- A WebshopController utolsó TODO-jánál hívjuk meg
-
+<ul>
+<li>A WebshopController utolsó TODO-jánál hívjuk meg</li>
+</ul>
 <div class="highlight"><pre><span></span><code><span class="n">paymentmethodRepository</span><span class="p">.</span><span class="na">newMethod</span><span class="p">(</span><span class="n">paymentMethod</span><span class="p">.</span><span class="na">getMod</span><span class="p">(),</span> <span class="n">paymentMethod</span><span class="p">.</span><span class="na">getHatarido</span><span class="p">());</span>
 </code></pre></div>
 
-- A `Paymentmethod` entitás `deadline` és `method` tagváltozóin validációs _constraint_-eket találunk. Ezek az annotációk a _Bean Validation API_ részei, amivel a webes rétegben használt Spring MVC, de a JPA és integrálódik, így a webrétegbeli és adatrétegbeli validáció konzisztens módon, redundanciamentesen definiálható.
-
+<ul>
+<li>A <code>Paymentmethod</code> entitás <code>deadline</code> és <code>method</code> tagváltozóin validációs <em>constraint</em>-eket találunk. Ezek az annotációk a <em>Bean Validation API</em> részei, amivel a webes rétegben használt Spring MVC, de a JPA és integrálódik, így a webrétegbeli és adatrétegbeli validáció konzisztens módon, redundanciamentesen definiálható.</li>
+</ul>
 <div class="highlight"><pre><span></span><code><span class="nd">@NotNull</span>
 <span class="kd">private</span> <span class="n">BigDecimal</span> <span class="n">deadline</span><span class="p">;</span>
 
@@ -1103,6 +1319,47 @@ A webrétegbeli meghívás:
 <footer class="md-footer">
 
   <!-- Link to previous and/or next page -->
+  
+  <div class="md-footer-nav">
+    <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+
+      <!-- Link to previous page -->
+      
+      <a href="../mongodb/" title="MongoDB"
+        class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+        <div class="md-footer-nav__button md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </div>
+        <div class="md-footer-nav__title">
+          <div class="md-ellipsis">
+            <span class="md-footer-nav__direction">
+              Előző
+            </span>
+            MongoDB
+          </div>
+        </div>
+      </a>
+      
+
+      <!-- Link to next page -->
+      
+      <a href="../rest/" title="REST API & ASP.NET Web API"
+        class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+        <div class="md-footer-nav__title">
+          <div class="md-ellipsis">
+            <span class="md-footer-nav__direction">
+              Következő
+            </span>
+            REST API & ASP.NET Web API
+          </div>
+        </div>
+        <div class="md-footer-nav__button md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+        </div>
+      </a>
+      
+    </nav>
+  </div>
   
 
   <!-- Further information -->
