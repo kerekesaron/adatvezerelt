@@ -1,0 +1,838 @@
+
+
+
+<!doctype html>
+<html lang="hu" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <meta name="author" content="Dudás Ákos">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.4.0">
+    
+    
+      
+        <title>Opcionális házi feladat: MongoDB - BMEVIAUAC01 Adatvezérelt rendszerek</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.fe0cca5b.min.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.a46bcfb3.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#ef5350">
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../extra-material-theme.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="red" data-md-color-accent="red">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#opcionalis-hazi-feladat-mongodb" class="md-skip">
+          Kihagyás
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="../.." title="BMEVIAUAC01 Adatvezérelt rendszerek" class="md-header-nav__button md-logo" aria-label="BMEVIAUAC01 Adatvezérelt rendszerek">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            BMEVIAUAC01 Adatvezérelt rendszerek
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Opcionális házi feladat: MongoDB
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Keresés" placeholder="Keresés" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/bmeviauac01/adatvezerelt/" title="Főoldalra ugrás" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    bmeviauac01/adatvezerelt
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+          
+
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../.." class="md-tabs__link md-tabs__link--active">
+        Adatvezérelt rendszerek
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../db/" class="md-tabs__link">
+          Adatbázis
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../jegyzet/architektura/" class="md-tabs__link">
+          Jegyzetek
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="BMEVIAUAC01 Adatvezérelt rendszerek" class="md-nav__button md-logo" aria-label="BMEVIAUAC01 Adatvezérelt rendszerek">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    BMEVIAUAC01 Adatvezérelt rendszerek
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/bmeviauac01/adatvezerelt/" title="Főoldalra ugrás" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    bmeviauac01/adatvezerelt
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Adatvezérelt rendszerek" class="md-nav__link">
+      Adatvezérelt rendszerek
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Adatbázis
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Adatbázis" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Adatbázis
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../db/" title="Minta adatbázis sémája" class="md-nav__link">
+      Minta adatbázis sémája
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../db/mssql/" title="Microsoft SQL Server használata" class="md-nav__link">
+      Microsoft SQL Server használata
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../db/mongodb/" title="MongoDB használata" class="md-nav__link">
+      MongoDB használata
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../db/mssql.sql" title="mssql.sql" class="md-nav__link">
+      mssql.sql
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../db/mongo.js" title="mongodb.js" class="md-nav__link">
+      mongodb.js
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Jegyzetek
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Jegyzetek" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Jegyzetek
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../jegyzet/architektura/" title="Adatvezérelt rendszerek és a többrétegű (háromrétegű) architektúra" class="md-nav__link">
+      Adatvezérelt rendszerek és a többrétegű (háromrétegű) architektúra
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../jegyzet/transactions/" title="Tranzakciókezelés adatbázisokban" class="md-nav__link">
+      Tranzakciókezelés adatbázisokban
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../jegyzet/mssql/sql/" title="SQL nyelv, MSSQL platformfüggő SQL utasítások" class="md-nav__link">
+      SQL nyelv, MSSQL platformfüggő SQL utasítások
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../jegyzet/mssql/server-side-programming/" title="Microsoft SQL Server programozása" class="md-nav__link">
+      Microsoft SQL Server programozása
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../jegyzet/linq/" title="LINQ: Language Integrated Query" class="md-nav__link">
+      LINQ: Language Integrated Query
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../jegyzet/mongodb/" title="MongoDB műveletek és a MongoDB .NET Driver" class="md-nav__link">
+      MongoDB műveletek és a MongoDB .NET Driver
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../jegyzet/dependency-injection/index.md" title="None" class="md-nav__link">
+      None
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://github.com/bmeviauac01/rest-webapi-sample" title="REST és WebAPI demó alkalmazás" class="md-nav__link">
+      REST és WebAPI demó alkalmazás
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://github.com/bmeviauac01/todoapi-di-sample" title="ASP.NET Core DI demó alkalmazás" class="md-nav__link">
+      ASP.NET Core DI demó alkalmazás
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://github.com/bmeviauac01/threelayered-aspnetcore-sample" title="Minta többrétegű webalkalmazás" class="md-nav__link">
+      Minta többrétegű webalkalmazás
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Tartalomjegyzék">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Tartalomjegyzék
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#szukseges-eszkozok" class="md-nav__link">
+    Szükséges eszközök
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#feladat-0-neptun-kod" class="md-nav__link">
+    Feladat 0: Neptun kód
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#feladat-1-legnagyobb-osszerteku-termek-a-raktarban-1-pont" class="md-nav__link">
+    Feladat 1: Legnagyobb összértékű termék a raktárban (1 pont)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#feladat-2-afa-kulcs-modositasa-1-pont" class="md-nav__link">
+    Feladat 2: Áfa kulcs módosítása (1 pont)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#feladat-3-termek-eladasa-2-imsc-pont" class="md-nav__link">
+    Feladat 3: Termék eladása (2 iMsc pont)
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/bmeviauac01/adatvezerelt/edit/master/docs/hazi/Feladat-MongoDB.md" title="Oldal szerkesztése" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                  
+                
+                
+                <h1 id="opcionalis-hazi-feladat-mongodb">Opcionális házi feladat: MongoDB<a class="headerlink" href="#opcionalis-hazi-feladat-mongodb" title="Permanent link">&para;</a></h1>
+<p>A házi feladat opcionális. A teljesítéssel <strong>2 pluszpont és 2 iMsc pont</strong> szerezhető.</p>
+<p>GitHub Classroom segítségével a <TBD> linken keresztül hozz létre egy repository-t. Klónozd le a repository-t. Ez tartalmazni fogja a megoldás elvárt szerkezetét. A feladatok elkészítése után kommitold és pushold a megoldásod.</p>
+<blockquote>
+<p>A letöltött anyagot Visual Studio segítségével megnyitva keresd meg a <code>Megoldas.cs</code> fájlt (a <code>Solution</code> mappában). A házi feladat elvégzése során kizárólag ezt a fájlt kell módosítanod — minden más módosítás elveszik az automatikus kiértékelés során.</p>
+<p>Ezt a fájlt azonban tetszőlegesen módosíthatod — vehetsz fel új metódusokat / adattagokat, stb. Egyetlen kitétel, hogy forduljon a kód: tehát maradjon meg a paraméter nélküli konstruktor és az osztály implementálja az <code>IMegoldas</code> interfészt.</p>
+</blockquote>
+<h2 id="szukseges-eszkozok">Szükséges eszközök<a class="headerlink" href="#szukseges-eszkozok" title="Permanent link">&para;</a></h2>
+<ul>
+<li>MongoDB Community Server (<a href="https://www.mongodb.com/download-center/community">letöltés</a>)</li>
+<li>Robo 3T (<a href="https://robomongo.org/download">letöltés</a>)</li>
+<li>Gyakorlatokon is használt minta adatbázis kódja (<a href="https://raw.githubusercontent.com/bmeviauac01/gyakorlatok/master/mongo.js">mongo.js</a>).</li>
+<li>Előkészületként hozz létre egy új adatbázist, a <a href="https://bmeviauac01.github.io/gyakorlatok/Gyak4-MongoDB/#feladat-0-adatb%C3%A1zis-l%C3%A9trehoz%C3%A1sa-projekt-megnyit%C3%A1sa">gyakorlatanyagban</a> leírt módon.</li>
+<li>Microsoft Visual Studio 2017/2019 <a href="../VisualStudio-install/">az itt található beállításokkal</a></li>
+</ul>
+<h2 id="feladat-0-neptun-kod">Feladat 0: Neptun kód<a class="headerlink" href="#feladat-0-neptun-kod" title="Permanent link">&para;</a></h2>
+<p>Első lépésként a gyökérben található <code>neptun.txt</code> fájlba írd bele a Neptun kódodat!</p>
+<h2 id="feladat-1-legnagyobb-osszerteku-termek-a-raktarban-1-pont">Feladat 1: Legnagyobb összértékű termék a raktárban (1 pont)<a class="headerlink" href="#feladat-1-legnagyobb-osszerteku-termek-a-raktarban-1-pont" title="Permanent link">&para;</a></h2>
+<p>Az első feladat meghatározni, hogy a raktárunkban egy adott kategóriába tartozó termékek közül melyik képviseli a legnagyobb összértéket — tehát melyik termék az, amelyiknek a nettó ára szorozva a raktárban lévő mennyiségével a legnagyobb. Ehhez a következő metódust kell implementálnunk.</p>
+<div class="highlight"><pre><span></span><code><span class="k">public</span> <span class="p">(</span><span class="kt">string</span><span class="p">,</span> <span class="kt">double?</span><span class="p">)</span> <span class="n">LegnagyobbOsszertekuTermek</span><span class="p">(</span><span class="n">ObjectId</span> <span class="n">kategoriaID</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">throw</span> <span class="k">new</span> <span class="nf">NotImplementedException</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<ol>
+<li>
+<p>A pontos specifikáció megértéséhez vizsgáljuk meg először a feladathoz tartozó teszteket a <code>TestFeladat1.cs</code> fájlban.</p>
+</li>
+<li>
+<p>A függvény bemeneti paramétere a kategória ID-ja, amelyhez tartozó termékekre éppen kíváncsiak vagyunk.</p>
+</li>
+<li>Amennyiben tartozik termék a megadott kategóriához, akkor a legnagyobb összértékű termék nevét és az összértéket kell visszaadnunk.</li>
+<li>
+<p>Amennyiben nem tartozik termék a kategóriához, mind a két értékre <code>null</code>-t kell visszaadnunk.</p>
+</li>
+<li>
+<p>A termék kollekciót reprezentáló <code>IMongoCollection&lt;Termek&gt;</code> objektumot a <code>MongoDatabase</code> osztály <code>TermekCollection</code> statikus propertyjében találhatjuk meg. Ennek segítségével tudunk lekérdezéseket és módosító parancsokat kiadni az adatbázis számára.</p>
+</li>
+<li>
+<p>A lekérdezés elvégzéséhez a MongoDB aggregációs pipeline-ját érdemes használni. Ennek működésének felelevenítéséhez nézd meg a gyakorlatfeladatok megoldását.</p>
+</li>
+</ol>
+<p>A lekérdezéshez a következő pipeline lépések szükségesek:</p>
+<ul>
+<li>
+<p>Szűrjük le a termékeket a megadott kategóriához tartozókra. Ehhez egy <a href="https://docs.mongodb.com/manual/reference/operator/aggregation/match/">\$match</a> (<code>Match</code>) lépésre lesz szükségünk, ahol megadhatjuk a megfelelő filter kifejezést.</p>
+</li>
+<li>
+<p>Számoljuk ki minden megmaradt termék esetén az összértéket egy <a href="https://docs.mongodb.com/manual/reference/operator/aggregation/project/">\$project</a> (<code>Project</code>) lépés segítségével. Ne felejtsd el, hogy az <code>Osszertek</code> mellett a termék <code>Nev</code>-re is szükségünk lesz!</p>
+</li>
+<li>
+<p>Rendezzük az így kapott dokumentumokat csökkenő sorrendbe az <code>Osszertek</code> alapján. Ehhez a <a href="https://docs.mongodb.com/manual/reference/operator/aggregation/sort/">\$sort</a> (<code>SortByDescending</code>) lépést tudjuk alkalmazni.</p>
+</li>
+<li>
+<p>A legnagyobb értékre vagyunk kíváncsiak, azaz az eredmények közül csupán az első érdekel minket. Azonban akkor sem szeretnénk hibát kapni, ha egyáltalán nem tartozott termék ehhez a kategóriához. Ezért a <code>FirstOrDefault</code> kiértékelő utasítást érdemes használni.</p>
+</li>
+</ul>
+<blockquote>
+<p>Ha esetleg ismeretlen lenne a <code>(string, double?)</code> szintaktika:</p>
+<div class="highlight"><pre><span></span><code><span class="k">return</span> <span class="p">(</span><span class="s">&quot;test&quot;</span><span class="p">,</span> <span class="m">0.0</span><span class="p">);</span>
+</code></pre></div>
+
+<p>utasítás segítségével egyszerre két visszatérési értéket tudunk adni a függvénynek.</p>
+</blockquote>
+<ol>
+<li>
+<p>Ha úgy gondolod sikerült implementálni a metódust, akkor a korábban már látott <code>TestFeladat1</code> osztályban található teszt metódusokkal ellenőrizni tudod a működést.</p>
+</li>
+<li>
+<p>Készíts egy képernyőképet (screenshot), amin látszódik</p>
+</li>
+<li>
+<p>a fejlesztéséhez használt eszköz (pl. Visual Studio),</p>
+</li>
+<li>a gép és a felhasználó neve, amin a fejlesztést végezted (pl. konzolban add ki a <code>whoami</code> parancsot és ezt a konzolt is rakd a képernyőképre),</li>
+<li>az aktuális dátum (pl. az óra a tálcán)</li>
+<li>valamint a <code>LegnagyobbOsszertekuTermek</code> metódus kódja.</li>
+</ol>
+<p><a href="../img/img-screenshot-pl-vs.png">Itt egy példa</a>, körülbelül ilyesmit várunk.</p>
+<blockquote>
+<p>A képet <code>f1.png</code> néven mentsd el és add be a megoldásod részeként!</p>
+</blockquote>
+<h2 id="feladat-2-afa-kulcs-modositasa-1-pont">Feladat 2: Áfa kulcs módosítása (1 pont)<a class="headerlink" href="#feladat-2-afa-kulcs-modositasa-1-pont" title="Permanent link">&para;</a></h2>
+<p>Ebben a feladatban egy módosító utasítás (<code>Update</code>) segítségével kell megváltoztatni egy áfatípus kulcsát. Az implementálandó metódus a következő.</p>
+<div class="highlight"><pre><span></span><code><span class="k">public</span> <span class="k">void</span> <span class="nf">AfaKulcsValtoztat</span><span class="p">(</span><span class="kt">string</span> <span class="n">nev</span><span class="p">,</span> <span class="kt">int</span> <span class="n">ujKulcs</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">throw</span> <span class="k">new</span> <span class="nf">NotImplementedException</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<ol>
+<li>Először is vizsgáljuk meg, hogy hogy találhatók meg az ÁFA értékek az adatbázisunkban. Az SQL adatbázisban megszokott normalizált táblával ellentétben itt denormalizált módon, a <code>termekek</code> kollekcióban beágyazott dokumentumként szerepel.</li>
+</ol>
+<p><img alt="Beágyazott dokumentum" src="../img/img-mongo-embedded-doc.png" /></p>
+<p>Ezt tükrözi a <code>Termek</code> entitás osztály is.</p>
+<div class="highlight"><pre><span></span><code><span class="k">public</span> <span class="k">class</span> <span class="nc">Termek</span>
+<span class="p">{</span>
+<span class="na">    [BsonId]</span>
+    <span class="k">public</span> <span class="n">ObjectId</span> <span class="n">ID</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+    <span class="k">public</span> <span class="n">ObjectId</span> <span class="n">KategoriaID</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">Nev</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+    <span class="k">public</span> <span class="kt">double?</span> <span class="n">NettoAr</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+    <span class="k">public</span> <span class="kt">int?</span> <span class="n">Raktarkeszlet</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+    <span class="k">public</span> <span class="n">AFA</span> <span class="n">AFA</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+
+    <span class="k">public</span> <span class="kt">int?</span> <span class="n">Verzio</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>Ez az adatbázis olvasását igen hatékonnyá teszi: ha például az előző feladatban a bruttó összértékre lettünk volna kíváncsiak, akkor is egyetlen dokumentumban rendelkezésünkre áll minden szükséges érték — szemben az SQL adatbázissal, ahol ehhez <code>JOIN</code>-ra lenne szükség.</p>
+<p>Hátránya viszont, hogy módosítás esetén minden dokumentumban módosítanunk kell az áfakulcsot, ahol megjelenik.</p>
+<ol>
+<li>
+<p>Az előzőekből következik, hogy a gyakorlaton látott példához hasonlóan itt is <code>UpdateMany</code> utasításra lesz szükségünk — ugyanis mindenhol szeretnénk módosítani az áfakulcsot ahol a név megegyezik. A függvény használatának módját érdemes felidézni a gyakorlatanyag megoldásából.</p>
+</li>
+<li>
+<p>Az <code>UpdateMany</code> függvény <code>filter</code> paraméterében szűrjünk rá azokra a termékekre melyekben az <code>AFA.Nev</code> megegyezik a függvény <code>nev</code> paraméterével.</p>
+</li>
+<li>
+<p>A függvény <code>update</code> paraméterében a módosító lépést mondjuk meg, itt az <code>AFA.Kulcs</code> értéket szeretnénk beállítani az <code>ujKulcs</code> paraméter értékére. Ehhez a <a href="https://docs.mongodb.com/manual/reference/operator/update/set/">\$set</a> (<code>Set</code>) operátor használható.</p>
+</li>
+<li>
+<p>Az elkészült implementációt a <code>TestFeladat2</code> osztályban található teszt metódussal ellenőrizheted.</p>
+</li>
+<li>
+<p>Készíts egy képernyőképet a fent leírtak szerint a <code>AfaKulcsValtoztat</code> metódus kódjával.</p>
+</li>
+</ol>
+<blockquote>
+<p>A képet <code>f2.png</code> néven mentsd el és add be a megoldásod részeként!</p>
+</blockquote>
+<h2 id="feladat-3-termek-eladasa-2-imsc-pont">Feladat 3: Termék eladása (2 iMsc pont)<a class="headerlink" href="#feladat-3-termek-eladasa-2-imsc-pont" title="Permanent link">&para;</a></h2>
+<p>Ebben a feladatban egy termék eladását fogjuk implementálni. Ehhez a következő metódust fogjuk megvalósítani.</p>
+<div class="highlight"><pre><span></span><code><span class="k">public</span> <span class="kt">bool</span> <span class="nf">TermekElad</span><span class="p">(</span><span class="n">ObjectId</span> <span class="n">termekID</span><span class="p">,</span> <span class="kt">int</span> <span class="n">darab</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">throw</span> <span class="k">new</span> <span class="nf">NotImplementedException</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>A specifikáció a következő:</p>
+<ul>
+<li>Amennyiben a <code>termekID</code> ID-jú termékből legalább <code>darab</code> található a raktárban, akkor csökkentsük a raktárkészletet <code>darab</code>-bal. Ekkor a metódus <code>true</code> értékkel tér vissza.</li>
+<li>Amennyiben nincs elegendő termék raktáron, az adatbázisban ne változtassunk semmit. Ekkor a metódus <code>false</code> értékkel tér vissza.</li>
+<li>A metódus megírásánál építhetünk arra, hogy mindig érvényes (létező) ID értéket fogunk kapni — tehát rossz ID esetén a működés <em>nem definiált</em>.</li>
+</ul>
+<blockquote>
+<p>Ez azt jelenti, hogy tetszőleges értékkel visszatérhetünk, bármilyen <code>Exceptiont</code> dobhatunk, leállíthatjuk az alkalmazást vagy akár a teljes adatbázist is törölhetjük — ez utóbbi persze nem túl praktikus.</p>
+</blockquote>
+<ol>
+<li>
+<p>Első körben a megoldási ötletünk a következő lehet.</p>
+</li>
+<li>
+<p>Olvassuk fel a megadott <code>Termek</code> entitást az adatbázisból. Ez egy olyan <code>Find</code> utasítást jelent, ahol a termék ID-jára szűrünk. Mivel az ID érték egyedi, és a feladatkiírás garantálja nekünk, hogy a <code>termekID</code> mindig létező ID értéket kapunk, így nyugodtan használhatjuk a <code>First</code> kiértékelő utasítást.</p>
+</li>
+<li>Vizsgáljuk meg ezután a <code>Raktarkeszlet</code> értékét, és amennyiben kisebb, mint <code>darab</code>, térjünk vissza <code>false</code> értékkel.</li>
+<li>Ha van elegendő termék raktáron, csökkentsük a <code>Raktarkeszlet</code> értékét <code>darab</code>-bal. Ez még csak a C# objektumban végzi el a változtatást, ezt még el kell mentenünk az adatbázisba is.</li>
+<li>
+<p>Az adatbázisba mentéshez használhatjuk a következő utasítást (a <code>termekEladni</code> változó tartalmazza a korábban lekérdezett és módosított entitást):</p>
+<div class="highlight"><pre><span></span><code><span class="n">MongoDatabase</span><span class="p">.</span><span class="n">TermekCollection</span>
+    <span class="p">.</span><span class="n">ReplaceOne</span><span class="p">(</span><span class="n">termek</span> <span class="p">=&gt;</span> <span class="n">termek</span><span class="p">.</span><span class="n">ID</span> <span class="p">==</span> <span class="n">termekID</span><span class="p">,</span> <span class="n">termekEladni</span><span class="p">);</span>
+</code></pre></div>
+
+</li>
+<li>
+<p>Ha most ellenőrizzük a megoldásunkat a <code>TestFeladat3</code> osztályban található teszt metódusokkal, akkor azt kell látnunk, hogy az első két teszt sikeresen lefut, azonban a harmadik sikertelen.</p>
+</li>
+</ol>
+<p>Ennek az az oka, hogy az első két metódus csupán egy változtatást eszközöl, aminek esetében jól működik a logikánk. Amennyiben azonban sok párhuzamos "eladás" történik, akkor a hibás a működés. Miért van ez?</p>
+<p>A probléma oka az <em>atomicitás</em> hiánya. A felolvasás és a módosított entitás kiírása időben eltérnek egymástól, így <em>nem megismételhető olvasás</em> (az általam felolvasott <code>Raktarkeszlet</code> azóta már módosult az adatbázisban, tehát hibás értékkel dolgozom) és <em>elveszett módosítás</em> (más módosítását felülcsapom az enyémmel) próblémáiba is belefutunk.</p>
+<p>Sajnálatos módon az SQL rendszerekben megszokott válaszunk erre — tranzakciók — sajnos nem elérhető MongoDB esetében. Hogyan oldható meg mégis ez a probléma?</p>
+<ol>
+<li>
+<p>A válaszunk az optimális konkurenciakezelés lesz. Ennek lényege, hogy karbantartunk a dokumentumban egy <code>Verzio</code> értéket, melyet minden módosításnál inkrementálunk. Amikor a módosítást megpróbáljuk visszaírni az adatbázisba, akkor ellenőrizzük, hogy módosult-e közben a <code>Verzio</code> értéke.</p>
+</li>
+<li>
+<p>Ha módosult, az azt jelenti, hogy valaki megelőzött minket, tehát nem írhatjuk be a saját módosításunkat, ugyanis azzal felülcsapnánk az övét. Ilyenkor újra kell kezdenünk a tevékenységünket, úgy, hogy a friss értéket felolvassuk az adatbázisból. Ezt addig ismételjük, amíg egyszercsak nem mi "győzünk" — tehát amíg egyszer megtaláljuk módosítatlanul az entitást az adatbázisban.</p>
+</li>
+<li>Ha nem módosult, akkor "nyertünk", tehát az adatbázisban nem változott az érték mióta mi utoljára felolvastuk. Ilyenkor nyugodtan felülcsaphatjuk a saját értékünkkel.</li>
+</ol>
+<p>Nagyon fontos kitétel, hogy a <code>Verzio</code> ellenőrzés és csere <em>atomikusan</em> kell történjen, különben ez a megoldás nem működik.</p>
+<ol>
+<li>
+<p>Módosítsuk tehát a korábbi kódunkat, hogy alkalmazza az optimális konkurenciakezelést.</p>
+</li>
+<li>
+<p>Vegyük észre, hogy a <code>Termek</code> entitás már fel van erre készülve, megtalálható benne egy erre a célra szánt <code>Verzio</code> property.</p>
+<div class="highlight"><pre><span></span><code><span class="k">public</span> <span class="kt">int?</span> <span class="n">Verzio</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+</code></pre></div>
+
+<p>Arra oda kell figyelnünk, hogy az adatbázisban ez az érték nincs mindenhol kitöltve, tehát szerepelhet benne <code>null</code> érték.</p>
+</li>
+<li>
+<p>Első lépésünk a korábbi kódunkat egy <code>while(true)</code> ciklusba helyezni — ez fogja végezni az újrapróbálást ha esetleg valaki megelőzött volna minket a változtatással.</p>
+</li>
+<li>
+<p>A korábbi kódban változatlan marad az a rész, mely a termék entitás felolvasását, a <code>Raktarkeszlet</code> ellenőrzését és a <code>false</code>-al való visszatérést vagy a <code>Raktarkeszlet</code> csökkentését végzi. Ez a "logika" rész, melyet nem befolyásol a konkurenciakezelés.</p>
+</li>
+<li>
+<p>A visszaírás előtt azonban módosítanunk kell a <code>Verzio</code> értékét. Fontos, hogy mentsük el a jelenlegi értékét egy változóba (pl. <code>regiVerzio</code>). Figyeljünk oda, hogy a jelenlegi értéke lehet <code>null</code>. Megtehetjük például, hogy ha a jelenlegi érték <code>null</code>, akkor a következő fixen <strong>1</strong>, minden más esetben pedig <strong>1</strong>-gyel inkrementáljuk az értéket.</p>
+</li>
+<li>
+<p>A visszaírás maga úgy módosul, hogy a <code>filter</code> kifejezésbe fel kell vennünk a <code>Verzio</code>-ra vonatkozó kitételt is: <code>termek =&gt; termek.ID == termekID &amp;&amp; termek.Verzio == regiVerzio</code>. Így a <code>ReplaceOne</code> utasítás csak akkor jár sikerrel, ha az entitás verziója nem változott miközben dolgoztunk. Ez garantálja nekünk az <em>atomicitást</em>: ha a verzió nem változott, az írás megtörténik, egyébként nem, hiszen nem találja a specifikált dokumentumot.</p>
+</li>
+<li>
+<p>A <code>ReplaceOne</code> sikerességét úgy tudjuk ellenőrizni, hogy a visszatérési értékét eltesszük egy változóba (pl. <code>replaceResult</code>). A metódus akkor volt sikeres, ha a <code>replaceResult.ModifiedCount</code> nagyobb, mint <strong>0</strong>. Ha a mósodítás sikeres volt, visszatérhetünk <code>true</code> értékkel, egyébként kezdődik elölről a ciklus.</p>
+</li>
+<li>
+<p>Az ilyen módon módosított kód esetében már a harmadik tesztnek is sikeresen le kell futnia a <code>TestFeladat3</code> osztályban.</p>
+</li>
+<li>
+<p>Készíts egy képernyőképet a fent leírtak szerint a <code>TermekElad</code> metódus kódjával.</p>
+</li>
+</ol>
+<blockquote>
+<p>A képet <code>f3.png</code> néven mentsd el és add be a megoldásod részeként!</p>
+</blockquote>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+
+<!-- Application footer -->
+<footer class="md-footer">
+
+  <!-- Link to previous and/or next page -->
+  
+
+  <!-- Further information -->
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+
+      <!-- Copyright and theme information -->
+      <div class="md-footer-copyright">
+        
+        <div class="md-footer-copyright__highlight">
+          Copyright &copy; BME AUT
+        </div>
+        
+      </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/vendor.d710d30a.min.js"></script>
+      <script src="../../assets/javascripts/bundle.b39636ac.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "M\u00e1sol\u00e1s v\u00e1g\u00f3lapra", "clipboard.copied": "V\u00e1g\u00f3lapra m\u00e1solva", "search.config.lang": "hu", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Keres\u00e9shez \u00edrj ide valamit", "search.result.none": "Nincs tal\u00e1lat", "search.result.one": "1 egyez\u0151 dokumentum", "search.result.other": "# egyez\u0151 dokumentum"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../..",
+          features: ["tabs"],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.a68abb33.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>
