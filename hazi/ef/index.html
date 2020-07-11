@@ -961,6 +961,10 @@
 <p class="admonition-title">Ha a teszt nem fordul</p>
 <p>Ha nem fordulna le a teszt kód, lehet, hogy egy-egy property névnek mást használtál. A <strong>saját kódodban javítsd a nevet, ne a tesztekben</strong>!</p>
 </div>
+<div class="admonition danger">
+<p class="admonition-title"><code>OnConfiguring</code></p>
+<p>A <em>DbContext</em> kódjában nincs szükséged connection stringre. A konstruktor intézi a kapcsolat felépítését. Ne írj <code>OnConfiguring</code> függvény az osztályba!</p>
+</div>
 <div class="admonition example">
 <p class="admonition-title">BEADANDÓ</p>
 <p>A módosított C# forráskódot tölts fel.</p>
@@ -979,6 +983,7 @@
 <li>A <code>List</code> az összes terméket adja vissza <code>Model.Product</code> típusra leképezve.</li>
 <li>Az <code>Insert</code> szúrjon be egy új terméket. A kapott ÁFA kulcs értéknek megfelelően keresse ki az adatbázisból a kapcsolódó <code>VAT</code> rekordot, vagy ha nem létezik ilyen kulcs még, akkor szúrjon be egy új <code>VAT</code> rekordot is!</li>
 <li>A <code>ProductRepository</code> osztály definícióját (pl. osztály neve, konstruktor, függvények definíciója) ne változtasd meg, csak a függvények törzsét írd meg.</li>
+<li>A kódban a <code>ProductRepository.createDbContext()</code>-et használd a <em>DbContext</em> létrehozásához (és <strong>ne</strong> a <code>TestConnectionStringHelper</code>-t).</li>
 </ul>
 <div class="admonition example">
 <p class="admonition-title">BEADANDÓ</p>
