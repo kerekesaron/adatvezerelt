@@ -891,10 +891,6 @@
                 <h1 id="feladat-mongodb">Feladat: MongoDB<a class="headerlink" href="#feladat-mongodb" title="Permanent link">&para;</a></h1>
 <p>A házi feladat opcionális. A teljesítéssel <strong>2 pluszpont és 2 iMsc pont</strong> szerezhető.</p>
 <p>GitHub Classroom segítségével a <TBD> linken keresztül hozz létre egy repository-t. Klónozd le a repository-t. Ez tartalmazni fogja a megoldás elvárt szerkezetét. A feladatok elkészítése után kommitold és pushold a megoldásod.</p>
-<div class="admonition note">
-<p>A letöltött anyagot Visual Studio segítségével megnyitva keresd meg a <code>Solution.cs</code> fájlt (a <code>Solution</code> mappában). A házi feladat megoldása során kizárólag ezt a fájlt kell módosítanod — minden más módosítás elveszik az automatikus kiértékelés során.</p>
-<p>Ezt a fájlt azonban tetszőlegesen módosíthatod — vehetsz fel új metódusokat / adattagokat, stb. Egyetlen kitétel, hogy forduljon a kód: tehát maradjon meg a paraméter nélküli konstruktor és az osztály implementálja az <code>ISolution</code> interfészt.</p>
-</div>
 <h2 id="szukseges-eszkozok">Szükséges eszközök<a class="headerlink" href="#szukseges-eszkozok" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Windows, Linux vagy MacOS: Minden szükséges program platform független, vagy van platformfüggetlen alternatívája.</li>
@@ -918,11 +914,8 @@
 <h2 id="feladat-0-neptun-kod">Feladat 0: Neptun kód<a class="headerlink" href="#feladat-0-neptun-kod" title="Permanent link">&para;</a></h2>
 <p>Első lépésként a gyökérben található <code>neptun.txt</code> fájlba írd bele a Neptun kódodat!</p>
 <h2 id="feladat-1-afa-kulcs-modositasa-2-pluszpont">Feladat 1: Áfa kulcs módosítása (2 pluszpont)<a class="headerlink" href="#feladat-1-afa-kulcs-modositasa-2-pluszpont" title="Permanent link">&para;</a></h2>
-<p>Ebben a feladatban egy módosító utasítás (<code>Update</code>) segítségével kell megváltoztatni egy áfatípus kulcsát. Az implementálandó metódus a következő.</p>
+<p>Ebben a feladatban egy módosító utasítás (<code>Update</code>) segítségével kell megváltoztatni egy áfatípus kulcsát. Az implementálandó metódus a <code>ProductRepository</code> osztályban a következő.</p>
 <div class="highlight"><pre><span></span><code><span class="k">public</span> <span class="k">void</span> <span class="nf">ChangeVatPercentage</span><span class="p">(</span><span class="kt">string</span> <span class="n">name</span><span class="p">,</span> <span class="kt">int</span> <span class="n">newPercentage</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="k">throw</span> <span class="k">new</span> <span class="nf">NotImplementedException</span><span class="p">();</span>
-<span class="p">}</span>
 </code></pre></div>
 
 <ol>
@@ -953,8 +946,11 @@
 <li>A függvény <code>update</code> paraméterében a módosító lépést mondjuk meg, itt az <code>VAT.Percentage</code> értéket szeretnénk beállítani az <code>newPercentage</code> paraméter értékére. Ehhez a <a href="https://docs.mongodb.com/manual/reference/operator/update/set/">$set</a> (<code>Set</code>) operátor használható.</li>
 </ul>
 </li>
+<li>
+<p>Készítsd el a függvény implementációját. A repository osztály konstruktorban megkapja az adatbázist és elmenti magának a használandó gyűjteményt, ezen keresztül érheted el az adatbázist.</p>
+</li>
 </ol>
-<p>A teszteléshez találsz unit teszteket a solution-ben. A teszteket <a href="https://docs.microsoft.com/en-us/visualstudio/test/run-unit-tests-with-test-explorer?view=vs-2019">Visual Studio-ban egyszerűen tudod futtatni</a>, de ha mást használsz fejlesztéshez (pl. VS Code és/vagy <code>dotnet cli</code>), akkor is <a href="https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-test">tudsz teszteket futtatni</a>. Az adatbázis eléréséhez a <code>MongoDatabase.Initialize</code> függvényben módosíthatod a connection stringet.</p>
+<p>A teszteléshez találsz unit teszteket a solution-ben. A teszteket <a href="https://docs.microsoft.com/en-us/visualstudio/test/run-unit-tests-with-test-explorer?view=vs-2019">Visual Studio-ban egyszerűen tudod futtatni</a>, de ha mást használsz fejlesztéshez (pl. VS Code és/vagy <code>dotnet cli</code>), akkor is <a href="https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-test">tudsz teszteket futtatni</a>. Az adatbázis eléréséhez a <code>TestDbFactory</code> osztályban módosíthatod a connection stringet.</p>
 <div class="admonition important">
 <p class="admonition-title">Tesztek</p>
 <p>A tesztek az adatbázis kiinduló állapotát feltételezik. Futtasd le az adatbázis scriptet a kiinduló állapot visszaállításához.</p>
@@ -963,14 +959,11 @@
 <div class="admonition example">
 <p class="admonition-title">BEADANDÓ</p>
 <p>A módosított C# forráskódot tölts fel.</p>
-<p>Emellett készíts egy képernyőképet a <strong><code>products</code> collection tartalmáról a változtatás után</strong>. A teszt lefuttatásával a <em>Standard Rate</em> nevű áfakulcs százaléka megváltozik. Robo3T-ből (vagy más eszközből) mutasd meg, hogy valóban frissülnek a gyűjteményben az értékek. Egy-két érintett dokumentumot bonts ki, hogy látható legyen a változás (mint a képen fent).</p>
+<p>Emellett készíts egy képernyőképet a <strong><code>products</code> gyűjtemény tartalmáról a változtatás után</strong>. A teszt lefuttatásával a <em>Standard Rate</em> nevű áfakulcs százaléka megváltozik. Robo3T-ből (vagy más eszközből) mutasd meg, hogy valóban frissülnek a gyűjteményben az értékek. Egy-két érintett dokumentumot bonts ki, hogy látható legyen a változás (mint a képen fent).</p>
 </div>
 <h2 id="feladat-2-legnagyobb-osszerteku-termek-a-raktarban-2-imsc-pont">Feladat 2: Legnagyobb összértékű termék a raktárban (2 iMsc pont)<a class="headerlink" href="#feladat-2-legnagyobb-osszerteku-termek-a-raktarban-2-imsc-pont" title="Permanent link">&para;</a></h2>
-<p>A feladat meghatározni, hogy a raktárunkban egy adott kategóriába tartozó termékek közül melyik képviseli a legnagyobb összértéket — tehát melyik termék az, amelyiknek az <strong>ára szorozva a raktárban lévő mennyiségével a legnagyobb</strong>. Ehhez a következő metódust kell implementálnunk.</p>
+<p>A feladat meghatározni, hogy a raktárunkban egy adott kategóriába tartozó termékek közül melyik képviseli a legnagyobb összértéket — tehát melyik termék az, amelyiknek az <strong>ára szorozva a raktárban lévő mennyiségével a legnagyobb</strong>. Ehhez a <code>ProductRepository</code> osztályban a következő metódust kell implementálnunk.</p>
 <div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kt">string</span><span class="p">,</span> <span class="kt">double?</span><span class="p">)</span> <span class="n">ProductWithLargestTotalValue</span><span class="p">(</span><span class="n">ObjectId</span> <span class="n">categoryId</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="k">throw</span> <span class="k">new</span> <span class="nf">NotImplementedException</span><span class="p">();</span>
-<span class="p">}</span>
 </code></pre></div>
 
 <ol>
@@ -981,9 +974,6 @@
 <li>Amennyiben tartozik termék a megadott kategóriához, akkor a legnagyobb összértékű termék nevét és az összértéket kell visszaadnunk.</li>
 <li>Amennyiben nem tartozik termék a kategóriához, mind a két értékre <code>null</code>-t kell visszaadnunk.</li>
 </ul>
-</li>
-<li>
-<p>A termék kollekciót reprezentáló <code>IMongoCollection&lt;Product&gt;</code> objektumot a <code>MongoDatabase</code> osztály <code>ProductCollection</code> statikus propertyjében találhatjuk meg. Ennek segítségével tudunk lekérdezéseket és módosító parancsokat kiadni az adatbázis számára.</p>
 </li>
 <li>
 <p>A lekérdezés elvégzéséhez a MongoDB aggregációs pipeline-ját érdemes használni. Ennek működésének felelevenítéséhez nézd meg a gyakorlatfeladatok megoldását.</p>
@@ -1011,7 +1001,7 @@
 </div>
 </li>
 </ol>
-<p>Ha úgy gondolod sikerült implementálni a metódust, akkor a korábban már látott <code>TestExercise2</code> osztályban található teszt metódusokkal ellenőrizni tudod a működést.</p>
+<p>Ha sikerült implementálni a metódust, akkor a korábban már látott módon a <code>TestExercise2</code> osztályban található teszt metódusokkal ellenőrizni tudod a működést.</p>
 <div class="admonition example">
 <p class="admonition-title">BEADANDÓ</p>
 <p>A módosított C# forráskódot tölts fel.</p>
