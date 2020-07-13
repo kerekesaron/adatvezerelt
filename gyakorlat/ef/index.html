@@ -958,7 +958,7 @@
 <p>Hozz létre Visual Studio segítségével egy C# konzolalkalmazást. VS 2019 esetén keressünk rá a "console framework" szavakra, így a legegyszerűbb megtalálni a projekt típust.</p>
 <p><img alt="VS projekt típus" src="images/vs-create-project.png" /></p>
 <div class="admonition important">
-<p><strong>Ne</strong> .NET <em>Core</em> alkalmazást hozzunk létre, mert abban nincs <em>Database First</em> leképzés, amit használni fogunk.)</p>
+<p><strong>Ne</strong> .NET <em>Core</em> alkalmazást hozzunk létre, mert abban nincs vizuális <em>Database First</em> leképzés, amit használni fogunk.</p>
 <p>Ügyeljünk a projekt nyelvére is, C# nyelvű projekt legyen.</p>
 </div>
 <p>Hozd létre a projektet. A <code>c:\work</code> mappába dolgozz.</p>
@@ -996,10 +996,8 @@
 </li>
 <li>
 <p>Nyissuk meg az EF adatmodellt (dupla kattintás a Solution Explorer-ben). Vizsgáljuk meg: nézzük meg az entitásokat és kapcsolatokat.</p>
-</li>
-<li>
-<p>Ha szerkeszteni akarjuk a modellt, az <em>Entity Data Model Browser</em> és <em>Entity Data Model Mapping Details</em> ablakokon keresztül lehet szerkeszteni (ezek a <em>View</em> menü, <em>Other windows</em> menüponton keresztül érhetők el).</p>
-</li>
+<ul>
+<li>Ha szerkeszteni akarjuk a modellt, az <em>Entity Data Model Browser</em> és <em>Entity Data Model Mapping Details</em> ablakokon keresztül lehet szerkeszteni (ezek a <em>View</em> menü, <em>Other windows</em> menüponton keresztül érhetők el).</li>
 <li>
 <p>Javítsuk ki az alábbi entitás tulajdonság neveket, hogy jobban illeszkedjenek a valósághoz:</p>
 <ul>
@@ -1010,12 +1008,14 @@
 <li>VAT.Product -&gt; .Product&#8203;<strong>s</strong></li>
 <li>Category.Product -&gt; .Product&#8203;<strong>s</strong></li>
 </ul>
+</li>
+</ul>
 <p>Mentsük a változtatások után a modellt.</p>
 </li>
 <li>
 <p>Nézzük meg a <em>DbContext</em> és egy választott entitás osztály C# kódját. Bontsd ki a <em>Solution Explorer</em>-ben az EDM modell fájlját, és alatta ott találhatóak a C# fájlok.</p>
 <div class="admonition note">
-<p>Ezen fájlokba <em>nem</em> szerkesztünk bele, mert minden EDM módosítás után újragenerálódnak. Viszont figyeljük meg, hogy minden osztály <em>partial</em>-ként van definiálva, így ha szükséges, tudunk a meglevő kód "mellé" új forrásfájlokba sajátot is írni.</p>
+<p>Ezen fájlokba <em>nem</em> szerkesztünk bele, mert minden EDM módosítás után újragenerálódnak. Viszont figyeljük meg, hogy minden osztály <code>partial</code>-ként van definiálva, így ha szükséges, tudunk a meglevő kód "mellé" új forrásfájlokba sajátot is írni.</p>
 </div>
 </li>
 </ol>
@@ -1118,7 +1118,7 @@
 <p>A DbContext nem csak lekérdezéshez használható, hanem rajta keresztül módosítások is végrehajthatóak.</p>
 <ol>
 <li>
-<p>Írj olyan Linq-ra épülő C# kódot, mely az "LEGO" (ügyelj az írásmódra!) kategóriás termékek árát megemeli 10 százalékkal!</p>
+<p>Írj olyan Linq-ra épülő C# kódot, mely az "LEGO" kategóriás termékek árát megemeli 10 százalékkal!</p>
 </li>
 <li>
 <p>Hozz létre egy új kategóriát <em>Expensive toys</em> néven, és sorod át ide az összes olyan terméket, melynek ára, nagyobb, mint 8000 Ft!</p>
@@ -1187,7 +1187,7 @@
 <div class="admonition note">
 <p class="admonition-title">Tárolt eljárás az EDM-ben</p>
 <p>A tárolt eljárás leképzésének beállításait (pl. a tárolt eljárás visszatérési típusát) az <em>Entity Data Model Browser</em>-ben, az adott függvény <em>Function Import</em>-jához tartozó tulajdonságainál szerkesztenünk.</p>
-<p><img alt="Tárolt eljárás mappelése" src="images/vs-storedproc-mapping.png" /></p>
+<p><img alt="Tárolt eljárás mappelés beállításai" src="images/vs-storedproc-mapping.png" /></p>
 </div>
 <ol>
 <li>
@@ -1212,9 +1212,11 @@
 <ul>
 <li>Add hozzá a tárolt eljárást az EDM-hez. Az EDM Browser-ben jobb kantitással hozd elő a kontextus menüt, használd az "Update model from database"-t, és importáld (<em>Add</em>) az új tárolt eljárást.</li>
 <li>Mentsd el a modell változásait. Ekkor generálódik a háttérben a C# kód.</li>
-<li>Állítsd be ezt a metódust a <code>PaymentMethod</code> entitás <em>insert</em> metódusaként: kiválasztva az EDM-ben a <code>PaymentMethod</code> elemet a <em>Mapping Details</em> ablakban válts át a <em>Map Entity to Functions</em> nézetre, és állítsd be <em>Insert</em> metódusnak. A visszatérési értéket feleltesd meg az <em>ID</em> tulajdonságnak. Mentsd el a modell változásait.</li>
+<li>
+<p>Állítsd be ezt a metódust a <code>PaymentMethod</code> entitás <em>insert</em> metódusaként: kiválasztva az EDM-ben a <code>PaymentMethod</code> elemet a <em>Mapping Details</em> ablakban válts át a <em>Map Entity to Functions</em> nézetre, és állítsd be <em>Insert</em> metódusnak. A visszatérési értéket feleltesd meg az <em>ID</em> tulajdonságnak. Mentsd el a modell változásait.</p>
+<p><img alt="Tárolt eljárás entitásra mappelése" src="images/vs-insert-storedproc.png" /></p>
+</li>
 </ul>
-<p><img alt="Tárolt eljárás mappelése" src="images/vs-insert-storedproc.png" /></p>
 </li>
 <li>
 <p>Próbáld ki a működést: C# kódból adj hozzá egy új fizetési módot a DbContext <code>PaymentMethod</code> gyűjteményéhez az <code>Add</code> metódussal. Ellenőrizd az adatbázisban a rekord létrejöttét.</p>
@@ -1241,12 +1243,12 @@
 
 </li>
 <li>
-<p>Importáld az EDM-be a tárolt eljárást. Az eljárás beállításainál (<em>EDM Model Browser</em>-ben a <em>function</em>-re dupla kattintással nyílik) állítsd be a visszatérési értéket <code>Produc</code> típusúra. Mentsd el a modell változásait.</p>
-</li>
-</ul>
+<p>Importáld az EDM-be a tárolt eljárást. Az eljárás beállításainál (<em>EDM Model Browser</em>-ben a <em>function</em>-re dupla kattintással nyílik) állítsd be a visszatérési értéket <code>Product</code> típusúra. Mentsd el a modell változásait.</p>
 <p><img alt="Tárolt eljárás mappelése" src="images/vs-storedproc-mapping.png" /></p>
-<ul>
-<li>Használd a DbContext-en generált új függvényt a tárolt eljárás meghívásához, és írasd ki a termékek nevét!</li>
+</li>
+<li>
+<p>Használd a DbContext-en generált új függvényt a tárolt eljárás meghívásához, és írasd ki a termékek nevét!</p>
+</li>
 </ul>
 </li>
 </ol>

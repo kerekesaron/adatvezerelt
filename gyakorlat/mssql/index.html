@@ -981,11 +981,12 @@
 </li>
 <li>
 <p>Melyek azok a fizetési módok, amit soha nem választottak a megrendelőink?</p>
-<details class="example"><summary>Megoldás</summary><p><div class="highlight"><pre><span></span><code><span class="k">select</span> <span class="n">p</span><span class="p">.</span><span class="k">Method</span>
+<details class="example"><summary>Megoldás</summary><div class="highlight"><pre><span></span><code><span class="k">select</span> <span class="n">p</span><span class="p">.</span><span class="k">Method</span>
 <span class="k">from</span> <span class="p">[</span><span class="k">Order</span><span class="p">]</span> <span class="n">o</span> <span class="k">right</span> <span class="k">outer</span> <span class="k">join</span> <span class="n">PaymentMethod</span> <span class="n">p</span> <span class="k">on</span> <span class="n">o</span><span class="p">.</span><span class="n">PaymentMethodID</span> <span class="o">=</span> <span class="n">p</span><span class="p">.</span><span class="n">ID</span>
 <span class="k">where</span> <span class="n">o</span><span class="p">.</span><span class="n">ID</span> <span class="k">is</span> <span class="k">null</span>
 </code></pre></div>
-A megoldás kulcsa az <code>outer join</code>, aminek köszönhetően láthatjuk, mely fizetési mód rekordhoz <em>nem</em> tartozik egyetlen megrendelés se.</p>
+
+<p>A megoldás kulcsa az <code>outer join</code>, aminek köszönhetően láthatjuk, mely fizetési mód rekordhoz <em>nem</em> tartozik egyetlen megrendelés se.</p>
 </details>
 </li>
 <li>
@@ -1067,10 +1068,12 @@ A megoldás kulcsa az <code>outer join</code>, aminek köszönhetően láthatjuk
 <p><code>exec AddNewCategory 'Beach balls', NULL</code></p>
 <p>Ennek sikerülnie kell. Ellenőrizzük utána a tábla tartalmát.</p>
 <p>Ismételjük meg a fenti beszúrást, ekkor már hibák kell dobjon.</p>
+<p>Próbáljuk ki szülőkategóriával is.</p>
+<p><code>exec AddNewCategory 'LEGO Star Wars', 'LEGO'</code></p>
 </details>
 <h2 id="feladat-3-megrendelestetel-statuszanak-karbantartasa">Feladat 3: Megrendeléstétel státuszának karbantartása<a class="headerlink" href="#feladat-3-megrendelestetel-statuszanak-karbantartasa" title="Permanent link">&para;</a></h2>
 <p>Írjon triggert, ami a megrendelés státuszának változása esetén a hozzá tartozó egyes tételek státuszát a megfelelőre módosítja, ha azok régi státusza megegyezett a megrendelés régi státuszával. A többi tételt nem érinti a státusz változása.</p>
-<details class="example"><summary>Megoldás</summary><p><strong>Tárolt eljárás</strong></p>
+<details class="example"><summary>Megoldás</summary><p><strong>Trigger</strong></p>
 <div class="highlight"><pre><span></span><code><span class="k">create</span> <span class="k">or</span> <span class="k">alter</span> <span class="k">trigger</span> <span class="n">UpdateOrderStatus</span>
 <span class="k">on</span> <span class="p">[</span><span class="k">Order</span><span class="p">]</span>
 <span class="k">for</span> <span class="k">update</span>
@@ -1099,8 +1102,7 @@ A megoldás kulcsa az <code>outer join</code>, aminek köszönhetően láthatjuk
 <span class="k">where</span> <span class="n">ID</span><span class="o">=</span><span class="mi">1</span>
 </code></pre></div>
 
-<p>Ellenőrizzük a megrendelést és a tételeket (update után minden
-státusznak meg kell változnia):</p>
+<p>Ellenőrizzük a megrendelést és a tételeket (update után minden státusznak meg kell változnia):</p>
 <div class="highlight"><pre><span></span><code><span class="k">select</span> <span class="n">OrderItem</span><span class="p">.</span><span class="n">StatusID</span><span class="p">,</span> <span class="p">[</span><span class="k">Order</span><span class="p">].</span><span class="n">StatusID</span>
 <span class="k">from</span> <span class="n">OrderItem</span> <span class="k">join</span> <span class="p">[</span><span class="k">Order</span><span class="p">]</span> <span class="k">on</span> <span class="n">OrderItem</span><span class="p">.</span><span class="n">OrderID</span><span class="o">=</span><span class="p">[</span><span class="k">Order</span><span class="p">].</span><span class="n">ID</span>
 <span class="k">where</span> <span class="n">OrderID</span> <span class="o">=</span> <span class="mi">1</span>

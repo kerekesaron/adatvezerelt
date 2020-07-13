@@ -1041,8 +1041,7 @@
 <li>Fájl keresése: Ctrl+Shift+R</li>
 <li>Hiányzó importok megjavítása: Ctrl+Shift+O</li>
 <li>Kód formázása: Ctrl+Shift+F</li>
-<li>Ha a Java Resources alatt egy package-en jobb klikk / New Class/Interfaces, akkor abba a package-be rakja az új elemet by
-  default</li>
+<li>Ha a Java Resources alatt egy package-en jobb klikk / New Class/Interfaces, akkor abba a package-be rakja az új elemet</li>
 <li>Ha a nézeteket becsukjuk/átrendezzük, a default elrendezés visszaállítható: Window / Reset perspective</li>
 <li>Font megnövelése (a tanári gépen hasznos):<ul>
 <li>Window menü / Preferences, ott elkezdjük gépelni, hogy <em>font</em>, így megtalálja azt a beállítást, hogy Fonts and Colors</li>
@@ -1053,7 +1052,7 @@
 <h2 id="feladat-0-adatbazis-letrehozasa">Feladat 0: Adatbázis létrehozása<a class="headerlink" href="#feladat-0-adatbazis-letrehozasa" title="Permanent link">&para;</a></h2>
 <ol>
 <li>
-<p>Csatlakozzunk <em>Microsoft SQL Server Management Studio</em>-val a a szerverhez. Ezúttal nem <em>localdb</em>-t használunk, a szerver címe: <code>localhost\sqlexpress</code>. A bejelentkezéshez <em>SQL Server Authentication</em> módot válasszuk.</p>
+<p>Csatlakozzunk <em>Microsoft SQL Server Management Studio</em>-val a szerverhez. Ezúttal nem <em>localdb</em>-t használunk, a szerver címe: <code>localhost\sqlexpress</code>. A bejelentkezéshez <em>SQL Server Authentication</em> módot válasszuk.</p>
 </li>
 <li>
 <p>Hozzunk létre egy <code>adatvez</code> nevű adatbázist. <strong>Ügyeljünk a névre, különben a Java projektben módosítanunk kell</strong>. Az adatbázis létrehozásának mikéntjét lásd az <a href="../transactions/">első gyakorlat anyagában</a>. Ha a gépen már létezik az adatbázis, akkor nem kell újat létrehozni.</p>
@@ -1435,14 +1434,14 @@
 </code></pre></div>
 
 <ul>
-<li>A WebshopController utolsó TODO-jánál hívjuk meg</li>
-</ul>
-<div class="highlight"><pre><span></span><code><span class="n">paymentmethodRepository</span><span class="p">.</span><span class="na">newMethod</span><span class="p">(</span><span class="n">paymentMethod</span><span class="p">.</span><span class="na">getMod</span><span class="p">(),</span> <span class="n">paymentMethod</span><span class="p">.</span><span class="na">getHatarido</span><span class="p">());</span>
+<li>
+<p>A WebshopController utolsó TODO-jánál hívjuk meg</p>
+<div class="highlight"><pre><span></span><code><span class="n">paymentmethodRepository</span><span class="p">.</span><span class="na">newMethod</span><span class="p">(</span><span class="n">paymentMethod</span><span class="p">.</span><span class="na">getMethod</span><span class="p">(),</span> <span class="n">paymentMethod</span><span class="p">.</span><span class="na">getDeadline</span><span class="p">());</span>
 </code></pre></div>
 
-<ul>
-<li>A <code>Paymentmethod</code> entitás <code>deadline</code> és <code>method</code> tagváltozóin validációs <em>constraint</em>-eket találunk. Ezek az annotációk a <em>Bean Validation API</em> részei, amivel a webes rétegben használt Spring MVC, de a JPA és integrálódik, így a webrétegbeli és adatrétegbeli validáció konzisztens módon, redundanciamentesen definiálható.</li>
-</ul>
+</li>
+<li>
+<p>A <code>Paymentmethod</code> entitás <code>deadline</code> és <code>method</code> tagváltozóin validációs <em>constraint</em>-eket találunk. Ezek az annotációk a <em>Bean Validation API</em> részei, amivel a webes rétegben használt Spring MVC, de a JPA és integrálódik, így a webrétegbeli és adatrétegbeli validáció konzisztens módon, redundanciamentesen definiálható.</p>
 <div class="highlight"><pre><span></span><code><span class="nd">@NotNull</span>
 <span class="kd">private</span> <span class="n">BigDecimal</span> <span class="n">deadline</span><span class="p">;</span>
 
@@ -1451,6 +1450,8 @@
 <span class="kd">private</span> <span class="n">String</span> <span class="n">method</span><span class="p">;</span>
 </code></pre></div>
 
+</li>
+</ul>
 </details>
                 
               

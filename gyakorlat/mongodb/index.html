@@ -946,7 +946,7 @@
 </div>
 </li>
 <li>
-<p>Indítsuk el a MongoDB szervert és hozzuk létre az adatbázist.</p>
+<p>Indítsuk el a MongoDB szervert.</p>
 <ul>
 <li>Hozzunk létre egy mappát az adatbázisfájloknak, például <code>db</code> néven. (Ezt a mappát az előbb létrehozott munkakönyvtárban hozzuk létre.)</li>
 <li>
@@ -1040,7 +1040,7 @@
 <p>Ehhez a feladathoz csupán a termékeket reprezentáló gyűjteményben kell egy egyszerű lekérdezést kiadnunk. A szűrési feltételt kétféleképpen is megfogalmazhatjuk: lambda kifejezés segítségével, és kézzel összerakva is.</p>
 <div class="highlight"><pre><span></span><code><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;***** Első feladat *****&quot;</span><span class="p">);</span>
 
-<span class="c1">//2.1</span>
+<span class="c1">//2.1 első megoldás</span>
 <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;\t2.1 1. megoldás:&quot;</span><span class="p">);</span>
 <span class="kt">var</span> <span class="n">qProductAndStock1</span> <span class="p">=</span> <span class="n">productsCollection</span>
     <span class="p">.</span><span class="n">Find</span><span class="p">(</span><span class="n">p</span> <span class="p">=&gt;</span> <span class="n">p</span><span class="p">.</span><span class="n">Stock</span> <span class="p">&gt;</span> <span class="m">30</span><span class="p">)</span>
@@ -1062,7 +1062,7 @@
 </li>
 <li>
 <p>Ez a feladat nagyon hasonló ez előzőhöz. Figyeljük meg, hogy az SQL-es adatbázis séma esetén ehhez már <code>JOIN</code>-t (<code>Navigation Property</code>) kellett alkalmazni. Ezzel szemben itt minden szükséges adat a megrendelés kollekcióban található.</p>
-<div class="highlight"><pre><span></span><code><span class="c1">// 2.2</span>
+<div class="highlight"><pre><span></span><code><span class="c1">// 2.2 első megoldás</span>
 <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;\t2.2 1. megoldás:&quot;</span><span class="p">);</span>
 <span class="kt">var</span> <span class="n">qOrderItems1</span> <span class="p">=</span> <span class="n">ordersCollection</span>
     <span class="p">.</span><span class="n">Find</span><span class="p">(</span><span class="n">o</span> <span class="p">=&gt;</span> <span class="n">o</span><span class="p">.</span><span class="n">OrderItems</span><span class="p">.</span><span class="n">Length</span> <span class="p">&gt;=</span> <span class="m">2</span><span class="p">)</span>
@@ -1107,7 +1107,7 @@
 
 </li>
 <li>
-<p>A legdrágább termékek lekérdezéséhez két lekérdezést kell kiadnunk: először lekérdezzük a legmagasabb nettóár értékét, utána pedig lekérdezzük azokat a termékeket, melyeknek a nettóára megegyezik ezzel az értékkel.</p>
+<p>A legdrágább termékek lekérdezéséhez két lekérdezést kell kiadnunk: először lekérdezzük a legmagasabb árat, utána pedig lekérdezzük azokat a termékeket, melyeknek a nettóára megegyezik ezzel az értékkel.</p>
 <div class="highlight"><pre><span></span><code><span class="c1">//2.4</span>
 <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;\t2.4:&quot;</span><span class="p">);</span>
 <span class="kt">var</span> <span class="n">maxPrice</span> <span class="p">=</span> <span class="n">productsCollection</span>
@@ -1152,6 +1152,7 @@
 <span class="p">}</span>
 </code></pre></div>
 
+<p>A fenti nem túl elegáns megoldás, és csak kis adatbázisok esetén működik. Ha valódi körülmények között szembesülünk ezzel a feladattal, két lehetőségünk van: átdolgozni az adatbázis sémát (pl. a megrendelésbe belementeni a termék adatait - denormalizáció), avagy a MongoDB aggregácós pipeline-jának használatával a fenti módszerhes hasonlóra "rávenni" a MongoDB szervert (amire képes ugyan, de le fogja terhelni)</p>
 </li>
 </ol>
 </details>
@@ -1171,7 +1172,7 @@
 <li>
 <p>Hozzunk létre új POCO osztályt <code>Category</code> néven.</p>
 <p>Nézzük meg először a Robo3T program segítségével, hogy milyen adattagok találhatók a <code>categories</code> kollekcióban lévő dokumentumokban.</p>
-<p><img alt="kategoriak" src="images/categories.png" /></p>
+<p><img alt="Kategódia dokumentumok" src="images/categories.png" /></p>
 <p>Ez alapján létre tudjuk hozni a <code>Category</code> osztályt an <code>Entities</code> mappában.</p>
 <div class="highlight"><pre><span></span><code><span class="k">using</span> <span class="nn">MongoDB.Bson</span><span class="p">;</span>
 <span class="k">using</span> <span class="nn">MongoDB.Bson.Serialization.Attributes</span><span class="p">;</span>
