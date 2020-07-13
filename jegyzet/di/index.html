@@ -337,7 +337,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../db/mssql.sql" title="Minta adatbázis: mssql.sql" class="md-nav__link">
+    <a href="https://raw.githubusercontent.com/bmeviauac01/adatvezerelt/master/docs/db/mssql.sql" title="Minta adatbázis: mssql.sql" class="md-nav__link">
       Minta adatbázis: mssql.sql
     </a>
   </li>
@@ -349,7 +349,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../db/mongo.js" title="Minta adatbázis: mongo.js" class="md-nav__link">
+    <a href="https://raw.githubusercontent.com/bmeviauac01/adatvezerelt/master/docs/db/mongo.js" title="Minta adatbázis: mongo.js" class="md-nav__link">
       Minta adatbázis: mongo.js
     </a>
   </li>
@@ -1561,7 +1561,7 @@ Tekintsük most az <code>INotificationService</code> feloldását:</p>
 <p>ASP.NET Core környezetben a <code>DbContext</code> leszármazott osztályunk számára soha nem vezetünk be interfészt, hanem az osztályának a típusával kerül beregisztrálásra az IoC konténerbe (a példánkban is <code>TodoContext</code>-&gt;<code>TodoContext</code> leképezés történik). A <code>DbContext</code> önmagában is számos perzisztencial providerrel (pl. MSSQL, Oracle, memória, stb.) tud együtt működni, így alkalmazásfüggő, mennyire van értelme absztrahálni. Ha absztraháljuk az adathozzáférést, akkor nem a <code>DbContext</code>-hez vezetünk be interfészt, hanem a Repository tervezési mintát használjuk, és az egyes repository implementációkhoz vezetünk be interfészeket, valamint ezek vonatkozásában történik az IoC konténerben a leképezés (pl. <code>ITodoRepository</code>-&gt;<code>TodoRepository</code>). A repository osztályok pedig vagy maguk példányosítják a <code>DbContext</code> objektumokat, vagy konkruktor paraméterben kerül számukra beinjektálásra).</p>
 <div class="admonition note">
 <p class="admonition-title">Megjegyzés</p>
-<p>Jelen dokumentunak nem célja állást foglalni abban, mely esetben célszerű Repository vagy egyéb minták segítségével a controller illetve service osztályok számára az EF/DbContext alapú adathozzáférést egy DAL rétegben elrejteni, illetve ezzel szemben mely esetben használjuk a DbContext osztályt közvetlenül a controller/szolgáltatás objektumainkban (vagyis a BLL-ben). Az illusztráció kedvéért a TodoApi alkalmazásunk ebben az értelemben vegyes megoldást alkalmaz: a TodoItem objektumok perzisztálására a szolgáltatás osztályok közvetlenül a DbContext-et használják, míg a Contact-ok kezelésére a Repository mintát használjuk.</p>
+<p>Jelen dokumentumnak nem célja állást foglalni abban, mely esetben célszerű Repository vagy egyéb minták segítségével a controller illetve service osztályok számára az EF/DbContext alapú adathozzáférést egy DAL rétegben elrejteni, illetve ezzel szemben mely esetben használjuk a DbContext osztályt közvetlenül a controller/szolgáltatás objektumainkban (vagyis a BLL-ben). Az illusztráció kedvéért a TodoApi alkalmazásunk ebben az értelemben vegyes megoldást alkalmaz: a TodoItem objektumok perzisztálására a szolgáltatás osztályok közvetlenül a DbContext-et használják, míg a Contact-ok kezelésére a Repository mintát használjuk.</p>
 </div>
 <p>A fenti példában az is látható, hogy a <code>AddDbContext</code> során a DbContext (esetünkben <code>TodoContext</code>) regisztrálásakor egy lambda kifejezést is meg tudunk adni:</p>
 <div class="highlight"><pre><span></span><code><span class="n">opt</span> <span class="p">=&gt;</span> <span class="n">opt</span><span class="p">.</span><span class="n">UseInMemoryDatabase</span><span class="p">(</span><span class="s">&quot;TodoList&quot;</span><span class="p">)</span>

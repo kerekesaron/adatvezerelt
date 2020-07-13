@@ -337,7 +337,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../db/mssql.sql" title="Minta adatbázis: mssql.sql" class="md-nav__link">
+    <a href="https://raw.githubusercontent.com/bmeviauac01/adatvezerelt/master/docs/db/mssql.sql" title="Minta adatbázis: mssql.sql" class="md-nav__link">
       Minta adatbázis: mssql.sql
     </a>
   </li>
@@ -349,7 +349,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../db/mongo.js" title="Minta adatbázis: mongo.js" class="md-nav__link">
+    <a href="https://raw.githubusercontent.com/bmeviauac01/adatvezerelt/master/docs/db/mongo.js" title="Minta adatbázis: mongo.js" class="md-nav__link">
       Minta adatbázis: mongo.js
     </a>
   </li>
@@ -565,7 +565,8 @@
     Bonyolultabb projekció
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="Bonyolultabb projekció">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#egesz-objektum" class="md-nav__link">
@@ -592,6 +593,11 @@
   <a href="#nevtelen-tipusok" class="md-nav__link">
     Névtelen típusok
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1034,7 +1040,8 @@
     Bonyolultabb projekció
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="Bonyolultabb projekció">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#egesz-objektum" class="md-nav__link">
@@ -1061,6 +1068,11 @@
   <a href="#nevtelen-tipusok" class="md-nav__link">
     Névtelen típusok
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1221,28 +1233,28 @@
 
 <h3 id="bonyolultabb-projekcio">Bonyolultabb projekció<a class="headerlink" href="#bonyolultabb-projekcio" title="Permanent link">&para;</a></h3>
 <p>A projekció során több féle módon kérhetjük az eredményeket.</p>
-<h3 id="egesz-objektum">Egész objektum<a class="headerlink" href="#egesz-objektum" title="Permanent link">&para;</a></h3>
+<h4 id="egesz-objektum">Egész objektum<a class="headerlink" href="#egesz-objektum" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><span class="k">from</span> <span class="n">p</span> <span class="k">in</span> <span class="n">products</span>
 <span class="p">...</span>
 <span class="k">select</span> <span class="n">t</span>
 </code></pre></div>
 
 <p>Ilyenkor az eredmény <code>IQueryable&lt;Product&gt;</code>, azaz Product osztály példányokat kapunk.</p>
-<h3 id="csak-bizonyos-mezo">Csak bizonyos mező<a class="headerlink" href="#csak-bizonyos-mezo" title="Permanent link">&para;</a></h3>
+<h4 id="csak-bizonyos-mezo">Csak bizonyos mező<a class="headerlink" href="#csak-bizonyos-mezo" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><span class="k">from</span> <span class="n">p</span> <span class="k">in</span> <span class="n">products</span>
 <span class="p">...</span>
 <span class="k">select</span> <span class="n">p</span><span class="p">.</span><span class="n">Name</span>
 </code></pre></div>
 
 <p>Ilyenkor az eredmény <code>IQueryable&lt;string&gt;</code>, azaz csak a neveket kapjuk.</p>
-<h3 id="nevesitett-tipusok">Nevesített típusok<a class="headerlink" href="#nevesitett-tipusok" title="Permanent link">&para;</a></h3>
+<h4 id="nevesitett-tipusok">Nevesített típusok<a class="headerlink" href="#nevesitett-tipusok" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><span class="k">from</span> <span class="n">p</span> <span class="k">in</span> <span class="n">products</span>
 <span class="p">...</span>
 <span class="k">select</span> <span class="k">new</span> <span class="nf">MyType</span><span class="p">(</span><span class="n">p</span><span class="p">.</span><span class="n">Name</span><span class="p">,</span> <span class="n">p</span><span class="p">.</span><span class="n">Price</span><span class="p">)</span>
 </code></pre></div>
 
 <p>Ilyenkor az eredmény <code>IQueryable&lt;MyType&gt;</code>, ahol a <em>MyType</em> osztályt deklarálnunk kell, és a select-ben a konstruktorát hívjuk meg.</p>
-<h3 id="nevtelen-tipusok">Névtelen típusok<a class="headerlink" href="#nevtelen-tipusok" title="Permanent link">&para;</a></h3>
+<h4 id="nevtelen-tipusok">Névtelen típusok<a class="headerlink" href="#nevtelen-tipusok" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><span class="k">from</span> <span class="n">t</span> <span class="k">in</span> <span class="n">products</span>
 <span class="k">where</span> <span class="n">p</span><span class="p">.</span><span class="n">Price</span> <span class="p">&gt;</span> <span class="m">1000</span>
 <span class="k">select</span> <span class="k">new</span> <span class="p">{</span> <span class="n">ID</span> <span class="p">=</span> <span class="n">p</span><span class="p">.</span><span class="n">ID</span><span class="p">,</span> <span class="n">Name</span> <span class="p">=</span> <span class="n">p</span><span class="p">.</span><span class="n">Name</span> <span class="p">};</span>
