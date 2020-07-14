@@ -964,7 +964,9 @@
 </ul>
 <h2 id="gyakorlat-menete">Gyakorlat menete<a class="headerlink" href="#gyakorlat-menete" title="Permanent link">&para;</a></h2>
 <p>A gyakorlat végig vezetett, a gyakorlatvezető utasításai szerint haladjunk. Egy-egy részfeladatot próbáljunk meg először önállóan megoldani, utána beszéljük meg a megoldást közösen. Az utolsó feladat opcionális, ha belefér az időbe.</p>
+<div class="admonition info">
 <p>Emlékeztetőként a megoldások is megtalálhatóak az útmutatóban is. Előbb azonban próbáljuk magunk megoldani a feladatot!</p>
+</div>
 <h2 id="feladat-0-adatbazis-letrehozasa-ellenorzese">Feladat 0: Adatbázis létrehozása, ellenőrzése<a class="headerlink" href="#feladat-0-adatbazis-letrehozasa-ellenorzese" title="Permanent link">&para;</a></h2>
 <p>Az adatbázis az adott géphez kötött, ezért nem biztos, hogy a korábban létrehozott adatbázis most is létezik. Ezért először ellenőrizzük, és ha nem találjuk, akkor hozzuk létre újra az adatbázist. (Ennek mikéntjét lásd az <a href="../transactions/">első gyakorlat anyagában</a>.)</p>
 <h2 id="feladat-1-projekt-megnyitasa">Feladat 1: Projekt megnyitása<a class="headerlink" href="#feladat-1-projekt-megnyitasa" title="Permanent link">&para;</a></h2>
@@ -1005,7 +1007,7 @@
 <ol>
 <li>Töröljük ki a <code>ValuesController</code> osztályt. Adjuk hozzá helyette egy új <em>Api Controller</em>-t üresen <code>HelloController</code> néven: a <em>Solution Explorer</em>-ben a <em>Controllers</em> mappára jobb egérrel kattintva <em>Add / Controller... / API Controller - Empty</em>. A <code>HelloController</code> a <code>/api/hello</code> url alatt legyen elérhető.</li>
 <li>Készítsünk egy <code>GET</code> kérésre válaszoló metódust, ami egy szöveggel tér vissza. Próbáljuk ki Postman-nel: a GET kérést <a href="http://localhost:5000/api/hello">http://localhost:5000/api/hello</a> címre kell küldenünk.</li>
-<li>Módosítsuk a REST kérést kiszolgáló metódust úgy, hogy opcionálisan fogadjon el egy nevet <em>query paraméterben</em>, azaz az urlben, és ha kap ilyet, akkor a válasza legyen "Hello" + a kapott név. Próbáljuk ki ezt is Postmannel: Ha adunk nevet, akkor azt a <a href="http://localhost:5000/api/hello?nev=alma">http://localhost:5000/api/hello?nev=alma</a> url-je küldjük.</li>
+<li>Módosítsuk a REST kérést kiszolgáló metódust úgy, hogy opcionálisan fogadjon el egy nevet <em>query paraméterben</em>, azaz az urlben, és ha kap ilyet, akkor a válasza legyen "Hello" + a kapott név. Próbáljuk ki ezt is Postmannel: Ha adunk nevet, akkor azt a <a href="http://localhost:5000/api/hello?name=alma">http://localhost:5000/api/hello?name=alma</a> url-je küldjük.</li>
 <li>Végül készítsünk egy <em>új</em> REST Api végpontot (új függvényt), ami a <a href="http://localhost:5000/api/hello/alma">http://localhost:5000/api/hello/alma</a> url-en fog válaszolni pont úgy, ahogy az előző is tette (csak most a név a <em>path</em> része).</li>
 </ol>
 <details class="example"><summary>Megoldás</summary><div class="highlight"><pre><span></span><code><span class="na">[Route(&quot;api/hello&quot;)]</span>
@@ -1099,7 +1101,7 @@
         <span class="k">private</span> <span class="k">readonly</span> <span class="n">Dal</span><span class="p">.</span><span class="n">DataDrivenDbContext</span> <span class="n">dbContext</span><span class="p">;</span>
 
         <span class="c1">// Az adatbazist igy kaphatjuk meg. A kornyezet adja a Dependency Injection szolgaltatast.</span>
-        <span class="c1">// A DbContext automatikusan megszunik, amikor a controller megszunik: a lekerdezes vegen.</span>
+        <span class="c1">// A DbContext automatikusan megszunik a keres veges (DI beallitas).</span>
         <span class="k">public</span> <span class="nf">ProductsController</span><span class="p">(</span><span class="n">Dal</span><span class="p">.</span><span class="n">DataDrivenDbContext</span> <span class="n">dbContext</span><span class="p">)</span>
         <span class="p">{</span>
             <span class="k">this</span><span class="p">.</span><span class="n">dbContext</span> <span class="p">=</span> <span class="n">dbContext</span><span class="p">;</span>
