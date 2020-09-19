@@ -1030,6 +1030,7 @@
 
 <span class="k">begin</span> <span class="n">tran</span>
 
+<span class="c1">-- Létezik-e ilyen névvel már kategória</span>
 <span class="k">declare</span> <span class="o">@</span><span class="n">ID</span> <span class="nb">int</span>
 <span class="k">select</span> <span class="o">@</span><span class="n">ID</span> <span class="o">=</span> <span class="n">ID</span>
 <span class="k">from</span> <span class="n">Category</span> <span class="k">with</span> <span class="p">(</span><span class="n">TABLOCKX</span><span class="p">)</span>
@@ -1038,10 +1039,11 @@
 <span class="k">if</span> <span class="o">@</span><span class="n">ID</span> <span class="k">is</span> <span class="k">not</span> <span class="k">null</span>
 <span class="k">begin</span>
     <span class="k">rollback</span>
-    <span class="n">raiserror</span> <span class="p">(</span><span class="s1">&#39;Category %s alredy exists&#39;</span><span class="p">,</span><span class="mi">16</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="o">@</span><span class="n">Name</span><span class="p">)</span>
+    <span class="n">raiserror</span> <span class="p">(</span><span class="s1">&#39;Category %s already exists&#39;</span><span class="p">,</span><span class="mi">16</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="o">@</span><span class="n">Name</span><span class="p">)</span>
     <span class="k">return</span>
 <span class="k">end</span>
 
+<span class="c1">-- Szülő kategóriának léteznie kell</span>
 <span class="k">declare</span> <span class="o">@</span><span class="n">ParentID</span> <span class="nb">int</span>
 <span class="k">if</span> <span class="o">@</span><span class="n">ParentName</span> <span class="k">is</span> <span class="k">not</span> <span class="k">null</span>
 <span class="k">begin</span>
@@ -1067,7 +1069,7 @@
 <p>Nyissunk egy új Query ablakot és adjuk ki az alábbi parancsot.</p>
 <p><code>exec AddNewCategory 'Beach balls', NULL</code></p>
 <p>Ennek sikerülnie kell. Ellenőrizzük utána a tábla tartalmát.</p>
-<p>Ismételjük meg a fenti beszúrást, ekkor már hibák kell dobjon.</p>
+<p>Ismételjük meg a fenti beszúrást, ekkor már hibát kell dobjon.</p>
 <p>Próbáljuk ki szülőkategóriával is.</p>
 <p><code>exec AddNewCategory 'LEGO Star Wars', 'LEGO'</code></p>
 </details>
