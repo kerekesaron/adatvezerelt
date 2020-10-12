@@ -637,8 +637,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#feladat-5-vevo-osszemegrendelesenek-karbantartasa-onallo-feladat" class="md-nav__link">
-    Feladat 5: Vevő összemegrendelésének karbantartása (önálló feladat)
+  <a href="#feladat-5-vevo-osszmegrendelesenek-karbantartasa-onallo-feladat" class="md-nav__link">
+    Feladat 5: Vevő összmegrendelésének karbantartása (önálló feladat)
   </a>
   
 </li>
@@ -916,8 +916,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#feladat-5-vevo-osszemegrendelesenek-karbantartasa-onallo-feladat" class="md-nav__link">
-    Feladat 5: Vevő összemegrendelésének karbantartása (önálló feladat)
+  <a href="#feladat-5-vevo-osszmegrendelesenek-karbantartasa-onallo-feladat" class="md-nav__link">
+    Feladat 5: Vevő összmegrendelésének karbantartása (önálló feladat)
   </a>
   
 </li>
@@ -1144,7 +1144,7 @@
 
 <p>Ellenőrizzük a <code>Customer</code> tábla tartalmát.</p>
 </details>
-<h2 id="feladat-5-vevo-osszemegrendelesenek-karbantartasa-onallo-feladat">Feladat 5: Vevő összemegrendelésének karbantartása (önálló feladat)<a class="headerlink" href="#feladat-5-vevo-osszemegrendelesenek-karbantartasa-onallo-feladat" title="Permanent link">&para;</a></h2>
+<h2 id="feladat-5-vevo-osszmegrendelesenek-karbantartasa-onallo-feladat">Feladat 5: Vevő összmegrendelésének karbantartása (önálló feladat)<a class="headerlink" href="#feladat-5-vevo-osszmegrendelesenek-karbantartasa-onallo-feladat" title="Permanent link">&para;</a></h2>
 <p>Az előző feladatban kiszámolt érték az aktuális állapotot tartalmazza csak. Készítsünk triggert, amivel karbantartjuk azt az összeget minden megrendelést érintő változás esetén. Az összeg újraszámolása helyett csak frissítse a változásokkal az értéket!</p>
 <details class="example"><summary>Megoldás</summary><p>A megoldás kulcsa meghatározni, mely táblára kell a triggert tenni. A megrendelések változása érdekes számunkra, de valójában a végösszeg a megrendeléshez felvett tételek módosulásakor fog változni, így erre a táblára kell a trigger.</p>
 <p>A feladat nehézségét az adja, hogy az <code>inserted</code> és <code>deleted</code> táblákban nem csak egy vevő adatai módosulhatnak. Egy lehetséges megoldás a korábban használt kurzoros megközelítés (itt a változásokon kell iterálni). Avagy megpróbálhatjuk megírni egy utasításban is, ügyelve arra, hogy vevők szerint csoportosítsuk a változásokat.</p>
