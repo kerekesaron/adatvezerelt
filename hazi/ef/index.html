@@ -924,7 +924,7 @@
 <p>Képezd le a termékeket. Hozz létre egy új osztályt <code>DbProduct</code> néven az alábbi kóddal. (A <em>Db</em> prefix egyértelművé teszi, hogy az osztály az adatbázis kontextusában értelmezett. Ez a későbbi feladatnál lesz érdekes.) A leképzésnél többnyire hagyatkozzunk a konvenciókra, azaz a property-k nevénél használjuk az adatbázis oszlopok nevét, így automatikus lesz a leképzés.</p>
 <div class="highlight"><pre><span></span><code><span class="k">using</span> <span class="nn">System.ComponentModel.DataAnnotations.Schema</span><span class="p">;</span>
 
-<span class="k">namespace</span> <span class="nn">adatvez</span>
+<span class="k">namespace</span> <span class="nn">ef</span>
 <span class="p">{</span>
 <span class="na">    [Table(&quot;Product&quot;)]</span>
     <span class="k">public</span> <span class="k">class</span> <span class="nc">DbProduct</span>
