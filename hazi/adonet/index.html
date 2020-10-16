@@ -957,13 +957,14 @@
 </ol>
 <div class="admonition tip">
 <p class="admonition-title">Optimista konkurenciakezelés</p>
-<p>A megoldáshoz az optimista konkurenciakezelés koncepcióját alkalmazd. Ne használj tranzakciót, mert a lekérdezés és módosítás időben eltolva történik, közben az adatbázis kapcsolat megszűnik. A megoldást a <code>ProductRepository.UpdateWithConcurrencyCheck</code> függvényben írd meg, valamint adaptáld a <code>Model.Product</code> osztályt is. Az adatbázisba <strong>nem</strong> vehetsz fel új oszlopot.</p>
+<p>A megoldáshoz az optimista konkurenciakezelés koncepcióját alkalmazd. <strong>Ne használj tranzakciót</strong>, mert a lekérdezés és módosítás időben eltolva történik, közben az adatbázis kapcsolat megszűnik. <strong>Ne használj több SQL utasítást</strong> se, mert a lefutásuk között más adatbázis hozzáférések történhetnek elrontva a várt viselkedést. A megoldást a <code>ProductRepository.UpdateWithConcurrencyCheck</code> függvényben írd meg, valamint adaptáld a <code>Model.Product</code> osztályt is. Az adatbázisba <strong>nem</strong> vehetsz fel új oszlopot.</p>
 </div>
 <p>Ügyelj az alábbiakra:</p>
 <ul>
 <li>Csak a <code>ProductRepository.UpdateWithConcurrencyCheck</code> függvény és a <code>Model.Product</code> osztályok kódját módosítsd!</li>
 <li>A függvény visszatérési értékben jelezze, hogy sikeres volt-e a módosítás (vagyis, hogy nem volt konkurencia probléma).</li>
 <li><strong>Magyarázd el a viselkedést</strong> az <code>UpdateWithConcurrencyCheck</code> függvényben egy kommentben (2-3 mondatban).</li>
+<li>Egyetlen SQL parancs használatával oldd meg a feladatot!</li>
 <li>Csak ADO.NET technológiát használhatsz!</li>
 <li>Védekezz SQL injectionnel szemben!</li>
 <li>A <code>ProductRepository</code> osztály definícióját (pl. osztály neve, konstruktor, függvények definíciója) ne változtasd meg, csak a függvény törzsét írd meg.</li>
