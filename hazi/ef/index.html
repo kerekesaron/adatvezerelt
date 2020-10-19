@@ -944,7 +944,7 @@
 <p>Készíts egy <code>DbVat</code> osztályt a <code>VAT</code> tábla leképzésére a <code>DbProduct</code>-hoz hasonlóan. Ne felejtsd el felvenni a DbSet property-t az <code>ProductDbContext</code>-be <code>Vat</code> néven.</p>
 </li>
 <li>
-<p>Képezd le a Termek - AFA kapcsolatot.</p>
+<p>Képezd le a Product - VAT kapcsolatot.</p>
 <p>A <code>DbProduct</code> osztályba vegyél fel egy <code>DbVat</code> típusú <code>Vat</code> nevű get-set property-t, ez lesz a navigation property. Használd a <code>ForeignKey</code> <a href="https://docs.microsoft.com/en-us/ef/core/modeling/relationships?tabs=data-annotations%2Cdata-annotations-simple-key%2Csimple-key#foreign-key">attribútumot a property felett</a>, ami meghatározza a külső kulcs adatbázis mezőjét ("VatID").</p>
 <p>Vedd fel ennek az egy-több kapcsolatnak a másik oldalát a <code>DbVat</code> osztályba. Ez a <code>Products</code> nevű property <code>System.Collections.Generic.List</code> típusú legyen. (Lásd a példában is az előbbi linken.)</p>
 </li>
