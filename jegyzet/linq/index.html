@@ -1253,7 +1253,7 @@
 
 <p>Ilyenkor az eredmény <code>IQueryable&lt;MyType&gt;</code>, ahol a <em>MyType</em> osztályt deklarálnunk kell, és a select-ben a konstruktorát hívjuk meg.</p>
 <h4 id="nevtelen-tipusok">Névtelen típusok<a class="headerlink" href="#nevtelen-tipusok" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><span class="k">from</span> <span class="n">t</span> <span class="k">in</span> <span class="n">products</span>
+<div class="highlight"><pre><span></span><code><span class="k">from</span> <span class="n">p</span> <span class="k">in</span> <span class="n">products</span>
 <span class="k">where</span> <span class="n">p</span><span class="p">.</span><span class="n">Price</span> <span class="p">&gt;</span> <span class="m">1000</span>
 <span class="k">select</span> <span class="k">new</span> <span class="p">{</span> <span class="n">ID</span> <span class="p">=</span> <span class="n">p</span><span class="p">.</span><span class="n">ID</span><span class="p">,</span> <span class="n">Name</span> <span class="p">=</span> <span class="n">p</span><span class="p">.</span><span class="n">Name</span> <span class="p">};</span>
 </code></pre></div>
